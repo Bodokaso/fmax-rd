@@ -6,19 +6,19 @@ const Projects = () => {
     <section id="proyectos" className="py-[120px] bg-white">
       <div className="container-std">
         {/* Title row */}
-        <div className="flex justify-between items-start gap-[40px] mb-[50px]">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-[20px] md:gap-[40px] mb-[50px]">
           <div>
             <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
               <span>⚡</span>
               <span>PROYECTOS</span>
             </div>
-            <h2 className="font-heading text-[40px] font-bold text-dark leading-[48px]">
+            <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">
               Nuestros Proyectos Más Recientes
             </h2>
           </div>
 
-          <div className="flex flex-col items-end gap-4">
-            <p className="text-body-text text-base text-right max-w-[300px]">
+          <div className="flex flex-col items-start md:items-end gap-4">
+            <p className="text-body-text text-base md:text-right max-w-[300px]">
               Empalmes aplicados en obras civiles reales. Resultados verificables y
               certificados.
             </p>
@@ -27,7 +27,7 @@ const Projects = () => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-3 gap-5 mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -37,10 +37,7 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Image placeholder */}
               <div className="bg-gray-300 w-full h-[280px] group-hover:brightness-110 transition duration-300" />
-
-              {/* Overlay bar */}
               <div className="bg-secondary text-white p-4">
                 <p className="text-sm opacity-80 mb-1">
                   {project.date} — {project.location}

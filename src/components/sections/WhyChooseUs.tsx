@@ -21,18 +21,15 @@ const cards = [
 
 const WhyChooseUs = () => {
   return (
-    <section
-      className="relative bg-[#101418] py-[120px] overflow-hidden"
-      style={{ minHeight: '907px' }}
-    >
-      {/* Background image placeholder */}
-      <div className="absolute right-0 top-0 w-1/2 h-full z-0">
+    <section className="relative bg-[#101418] py-[120px] overflow-hidden md:min-h-[907px]">
+      {/* Background image placeholder — desktop only */}
+      <div className="hidden md:block absolute right-0 top-0 w-1/2 h-full z-0">
         <div className="bg-gray-700 w-full h-full" />
       </div>
 
-      {/* Circular spinning badge */}
+      {/* Spinning badge — desktop only */}
       <div
-        className="absolute z-20"
+        className="hidden md:flex absolute z-20"
         style={{ right: 'calc(50% - 57px)', top: '50%', transform: 'translateY(-50%)' }}
       >
         <motion.div
@@ -45,10 +42,7 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Grid */}
-      <div
-        className="relative z-10 container-lg grid grid-cols-2 gap-[60px] items-center"
-        style={{ gridTemplateColumns: '693.516px 485.484px' }}
-      >
+      <div className="relative z-10 container-lg grid grid-cols-1 md:grid-cols-2 gap-[40px] md:gap-[60px] items-center">
         {/* COL 1 */}
         <motion.div
           className="flex flex-col gap-6"
@@ -62,16 +56,16 @@ const WhyChooseUs = () => {
             <span>¿POR QUÉ F MAX RD?</span>
           </div>
 
-          <h2 className="font-heading text-[40px] font-bold text-white leading-[48px]">
+          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-white leading-[48px]">
             Solución Estructural que Cumple las Normas
           </h2>
 
-          <div className="grid grid-cols-2 gap-4 mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
             {cards.map((card, index) => (
               <motion.div
                 key={card.title}
                 className="border border-white/10 p-[25px] flex flex-col gap-3"
-                style={{ maxWidth: '340px', minHeight: '209px' }}
+                style={{ minHeight: '209px' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -89,8 +83,8 @@ const WhyChooseUs = () => {
           </p>
         </motion.div>
 
-        {/* COL 2 — image fills bg behind it */}
-        <div />
+        {/* COL 2 — image fills bg behind it (desktop only) */}
+        <div className="hidden md:block" />
       </div>
     </section>
   );

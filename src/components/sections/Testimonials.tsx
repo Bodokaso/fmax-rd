@@ -18,44 +18,47 @@ const Testimonials = () => {
     };
   }, [embla, onSelect]);
 
+  const arrows = (
+    <div className="flex gap-2">
+      <button
+        onClick={() => embla?.scrollPrev()}
+        className="w-[60px] h-[60px] bg-[#101418] text-white flex items-center justify-center hover:brightness-110 transition cursor-pointer border-0"
+      >
+        ←
+      </button>
+      <button
+        onClick={() => embla?.scrollNext()}
+        className="w-[60px] h-[60px] bg-[#101418] text-white flex items-center justify-center hover:brightness-110 transition cursor-pointer border-0"
+      >
+        →
+      </button>
+    </div>
+  );
+
   return (
-    <section className="bg-[#EEF3F6] py-[120px]">
+    <section className="bg-[#EEF3F6] py-[60px] md:py-[120px]">
       <div className="container-lg">
         <div style={{ maxWidth: '1200px' }}>
           {/* Header row */}
-          <div className="flex justify-between items-start mb-[50px]">
+          <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-[50px]">
             <div>
               <div className="flex items-center gap-2 text-primary text-[18px] mb-3">
                 <span>⚡</span>
                 <span>TESTIMONIOS</span>
               </div>
-              <h2 className="font-heading text-[40px] font-bold text-dark leading-[48px]">
+              <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">
                 Lo que Dicen Nuestros Clientes
               </h2>
             </div>
-
-            <div className="flex gap-2">
-              <button
-                onClick={() => embla?.scrollPrev()}
-                className="w-[60px] h-[60px] bg-[#101418] text-white flex items-center justify-center hover:brightness-110 transition cursor-pointer border-0"
-              >
-                ←
-              </button>
-              <button
-                onClick={() => embla?.scrollNext()}
-                className="w-[60px] h-[60px] bg-[#101418] text-white flex items-center justify-center hover:brightness-110 transition cursor-pointer border-0"
-              >
-                →
-              </button>
-            </div>
+            {/* Arrows — desktop: top right */}
+            <div className="hidden md:flex">{arrows}</div>
           </div>
 
           {/* Carousel */}
-          <div ref={emblaRef} className="overflow-hidden" style={{ maxWidth: '575px' }}>
+          <div ref={emblaRef} className="overflow-hidden max-w-full md:max-w-[575px]">
             <div className="flex">
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="flex-none w-[575px] min-w-0 pr-4">
-                  {/* Card */}
+                <div key={testimonial.id} className="flex-none w-full md:w-[575px] min-w-0 pr-4">
                   <div className="bg-white p-[55px_35px_45px_35px] relative mb-6">
                     <p className="text-body-text text-[22px] italic leading-relaxed">
                       {testimonial.quote}
@@ -67,7 +70,6 @@ const Testimonials = () => {
                       ))}
                     </div>
 
-                    {/* Dot pattern */}
                     <div className="absolute bottom-[-10px] left-[40px] opacity-20">
                       <div
                         className="grid gap-1"
@@ -80,7 +82,6 @@ const Testimonials = () => {
                     </div>
                   </div>
 
-                  {/* Author row */}
                   <div className="flex items-center gap-4 mt-8">
                     <div className="w-[60px] h-[60px] rounded-full bg-gray-300 shrink-0" />
                     <div>
@@ -95,6 +96,9 @@ const Testimonials = () => {
             </div>
           </div>
 
+          {/* Arrows — mobile: below carousel */}
+          <div className="flex md:hidden justify-start mt-6">{arrows}</div>
+
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, index) => (
@@ -103,8 +107,7 @@ const Testimonials = () => {
                 onClick={() => embla?.scrollTo(index)}
                 className="w-2 h-2 rounded-full border-0 cursor-pointer transition-colors duration-200"
                 style={{
-                  backgroundColor:
-                    activeIndex === index ? '#101418' : 'rgba(16,20,24,0.3)',
+                  backgroundColor: activeIndex === index ? '#101418' : 'rgba(16,20,24,0.3)',
                 }}
               />
             ))}

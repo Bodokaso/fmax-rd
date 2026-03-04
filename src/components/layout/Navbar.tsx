@@ -28,16 +28,10 @@ const Navbar = () => {
       {/* Top bar */}
       <div className="h-[61px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
         <div className="flex gap-6">
-          <a
-            href="tel:+18294707193"
-            className="text-sm text-body-text hover:text-primary transition"
-          >
+          <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
             (829) 470-7193
           </a>
-          <a
-            href="mailto:fmaxrd@gmail.com"
-            className="text-sm text-body-text hover:text-primary transition"
-          >
+          <a href="mailto:fmaxrd@gmail.com" className="hidden md:block text-sm text-body-text hover:text-primary transition">
             fmaxrd@gmail.com
           </a>
         </div>
@@ -56,7 +50,7 @@ const Navbar = () => {
 
       {/* Main nav */}
       <div className="h-[80px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
-        <span className="font-heading font-bold text-2xl text-dark">F MAX RD</span>
+        <span className="font-heading font-bold text-xl md:text-2xl text-dark">F MAX RD</span>
 
         <nav className="hidden md:flex gap-8">
           {navLinks.map(({ label, id }) => (
@@ -71,10 +65,7 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button
-            className="btn-primary text-sm px-5 py-3"
-            onClick={() => scrollTo('contacto')}
-          >
+          <button className="btn-primary text-sm px-5 py-3" onClick={() => scrollTo('contacto')}>
             Contáctanos
           </button>
           <button

@@ -6,7 +6,7 @@ const scrollTo = (id: string) => {
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative h-[706px] pt-[100px] pb-[140px]">
+    <section id="inicio" className="relative min-h-[600px] md:min-h-[706px] pt-[100px] pb-[140px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-[#2a2a2a] w-full h-full">
         <div
@@ -20,9 +20,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container-lg h-full flex flex-col justify-center">
-        <div className="max-w-[800px]">
+        <div className="max-w-full md:max-w-[800px]">
           <motion.h1
-            className="font-heading text-[70px] leading-[77px] font-bold text-white"
+            className="font-heading text-[40px] md:text-[70px] leading-tight md:leading-[77px] font-bold text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -31,7 +31,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-[20px] mb-[65px] max-w-[600px] text-white text-[20px] font-body leading-relaxed"
+            className="mt-[20px] mb-[40px] md:mb-[65px] max-w-[600px] text-white text-[16px] md:text-[20px] font-body leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -41,7 +41,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.div
-            className="flex gap-4 flex-wrap"
+            className="flex flex-col sm:flex-row gap-3 flex-wrap"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

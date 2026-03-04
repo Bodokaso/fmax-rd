@@ -26,10 +26,7 @@ const steps = [
 const Process = () => {
   return (
     <section className="py-[120px] bg-white">
-      <div
-        className="container-std grid grid-cols-2 gap-[60px]"
-        style={{ gridTemplateColumns: '524px 655px' }}
-      >
+      <div className="container-std grid grid-cols-1 md:grid-cols-2 gap-[40px] md:gap-[60px]">
         {/* COL 1 */}
         <div>
           <div className="bg-gray-300 w-full h-[300px] mb-6" />
@@ -39,7 +36,7 @@ const Process = () => {
             <span>PROCESO DE APLICACIÓN</span>
           </div>
 
-          <h2 className="font-heading text-[40px] font-bold text-dark leading-[48px]">
+          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">
             ¿Cómo Se Instala el Empalme?
           </h2>
 
@@ -53,10 +50,8 @@ const Process = () => {
 
         {/* COL 2 — steps */}
         <div className="relative">
-          {/* Static vertical line */}
           <div className="absolute left-[23px] top-0 bottom-0 w-px bg-gray-200" />
 
-          {/* Animated yellow line */}
           <motion.div
             className="absolute left-[23px] top-0 w-px bg-primary origin-top"
             initial={{ scaleY: 0 }}

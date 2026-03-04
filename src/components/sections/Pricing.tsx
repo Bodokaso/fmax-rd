@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { pricingPlans } from '../../data/pricing';
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   return (
-    <section id="precios" className="py-[120px] bg-white">
+    <section id="precios" className="py-[60px] md:py-[120px] bg-white">
       <div className="container-std">
         {/* Title area */}
         <div className="text-center mb-10">
@@ -13,7 +21,7 @@ const Pricing = () => {
             <span>⚡</span>
             <span>PLANES DE SERVICIO</span>
           </div>
-          <h2 className="font-heading text-[40px] font-bold text-dark">
+          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark">
             Elige el Plan Correcto
           </h2>
           <p className="text-body-text mt-2">
@@ -45,12 +53,12 @@ const Pricing = () => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-3 gap-[15px] mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[15px] mt-4">
           {pricingPlans.map((plan) => (
             <div
               key={plan.id}
               className={`relative p-[10px] rounded-sm transition-all duration-200 border-2 ${plan.featured ? 'border-primary shadow-lg' : 'border-gray-100'}`}
-              style={plan.featured ? { transform: 'scale(1.02)' } : {}}
+              style={{ transform: !isMobile && plan.featured ? 'scale(1.02)' : 'none' }}
             >
               <div className="bg-white p-6 flex flex-col gap-4 h-full">
                 <span className="text-3xl">

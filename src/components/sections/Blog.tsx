@@ -3,25 +3,26 @@ import { blogPosts } from '../../data/blog';
 
 const Blog = () => {
   return (
-    <section className="py-[120px] bg-white">
+    <section className="py-[60px] md:py-[120px] bg-white">
       <div className="container-std">
         {/* Title row */}
-        <div className="flex justify-between items-center gap-[40px] mb-[50px]">
-          <div className="max-w-[60%]">
+        <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-[50px]">
+          <div className="max-w-full md:max-w-[60%]">
             <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
               <span>⚡</span>
               <span>BLOG</span>
             </div>
-            <h2 className="font-heading text-[40px] font-bold text-dark leading-[48px]">
+            <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">
               Últimas Tendencias en Construcción Estructural
             </h2>
           </div>
-
-          <button className="btn-primary shrink-0">Ver Todos los Artículos</button>
+          <button className="btn-primary shrink-0 self-start md:self-auto">
+            Ver Todos los Artículos
+          </button>
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
@@ -32,7 +33,6 @@ const Blog = () => {
               viewport={{ once: true }}
             >
               <div className="bg-gray-300 w-full h-[240px]" />
-
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="bg-secondary/10 text-secondary text-sm font-heading font-semibold px-3 py-1 rounded">
@@ -43,11 +43,9 @@ const Blog = () => {
                     <span className="text-body-text text-sm">{post.date}</span>
                   </div>
                 </div>
-
                 <h3 className="font-heading font-bold text-dark text-xl mb-2 hover:text-secondary transition">
                   {post.title}
                 </h3>
-
                 <p className="text-body-text font-body text-base">{post.excerpt}</p>
               </div>
             </motion.div>

@@ -2,7 +2,7 @@
 // Web3Forms access key from https://web3forms.com
 // Free plan sends up to 250 emails/month
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import type { ContactFormData } from '../../types';
 
@@ -14,6 +14,14 @@ const IntroStrip = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const {
     register,
@@ -57,10 +65,10 @@ const IntroStrip = () => {
   };
 
   return (
-    <section className="relative z-10 pt-[70px] pb-0 bg-transparent">
-      <div className="container-std flex flex-row justify-between items-center gap-[10px]">
-        {/* LEFT — feature points */}
-        <div className="flex flex-row items-center gap-[20px] flex-1">
+    <section className="relative z-10 pt-[40px] pb-[40px] bg-white md:pt-[70px] md:pb-0 md:bg-transparent">
+      <div className="container-std flex flex-col md:flex-row justify-between items-center gap-[20px]">
+        {/* LEFT — feature points (hidden on mobile) */}
+        <div className="hidden md:flex flex-row items-center gap-[20px] flex-1">
           {/* Point 1 */}
           <div className="flex items-start gap-4">
             <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
@@ -97,10 +105,10 @@ const IntroStrip = () => {
         </div>
 
         {/* RIGHT — overlapping form */}
-        <div className="w-[426px] shrink-0">
+        <div className="w-full md:w-[426px] shrink-0">
           <div
-            className="relative z-20 bg-[rgba(245,197,24,0.92)] p-[50px_35px_40px_35px] w-[426px] shadow-2xl"
-            style={{ marginTop: '-340px' }}
+            className="relative z-20 bg-[rgba(245,197,24,0.92)] p-[50px_35px_40px_35px] w-full md:w-[426px] shadow-2xl"
+            style={{ marginTop: isMobile ? '0px' : '-340px' }}
           >
             <h3 className="font-heading font-bold text-dark text-[24px] mb-6">
               ¡Tu Solución Empieza Aquí!
@@ -124,7 +132,6 @@ const IntroStrip = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)}>
-                {/* Full Name */}
                 <label className="text-dark font-semibold text-sm mb-1 block">
                   Nombre Completo
                 </label>
@@ -137,7 +144,6 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.fullName.message}</span>
                 )}
 
-                {/* Phone */}
                 <label className="text-dark font-semibold text-sm mb-1 block">Teléfono</label>
                 <input
                   type="tel"
@@ -148,7 +154,6 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.phone.message}</span>
                 )}
 
-                {/* Project Type */}
                 <label className="text-dark font-semibold text-sm mb-1 block">
                   Tipo de Proyecto
                 </label>
@@ -178,9 +183,7 @@ const IntroStrip = () => {
                   type="submit"
                   disabled={loading}
                   className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 ${
-                    loading
-                      ? 'opacity-70 cursor-not-allowed'
-                      : 'hover:brightness-110 cursor-pointer'
+                    loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
                   }`}
                 >
                   {loading ? 'Enviando...' : 'Enviar Consulta'}
