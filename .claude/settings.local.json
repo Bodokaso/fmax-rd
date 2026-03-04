@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create vite@latest . -- --template react-ts 2>&1)",
+      "Bash(yes | npm create vite@latest . -- --template react-ts 2>&1)",
+      "Bash(npm install 2>&1)",
+      "Bash(npm install -D tailwindcss postcss autoprefixer 2>&1)",
+      "Bash(npx tailwindcss init -p 2>&1)",
+      "Bash(npm install -D tailwindcss@3 2>&1)",
+      "Bash(npm install react-hook-form framer-motion embla-carousel-react react-intersection-observer 2>&1)",
+      "Bash(npx tsc --noEmit 2>&1)",
+      "Bash(echo \"const Navbar = \\(\\) => null; export default Navbar;\" > /Users/ro/Projects/fmax-rd/src/components/layout/Navbar.tsx && npx tsc --noEmit 2>&1)",
+      "Bash(sleep 3 && curl -s http://localhost:5173 | head -5)",
+      "Bash(npm run build 2>&1)"
+    ]
+  }
+}

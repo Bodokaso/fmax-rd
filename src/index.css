@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color--primary: #F5C518;
+  --bg-color--secondary: #1756B5;
+  --font-color--title: #1A1A1A;
+  --font-color--content: #4c586f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #4C586F;
+  font-size: 20px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Urbanist', sans-serif;
+  color: #1A1A1A;
+}
+
+.btn-primary {
+  @apply bg-[#F5C518] text-[#1A1A1A] font-semibold px-[27px] py-[20px] rounded-[2px] border border-[#F5C518] inline-flex items-center gap-2 transition-all duration-200 hover:brightness-95 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-white text-[#1A1A1A] font-semibold px-[27px] py-[20px] rounded-none border border-[#1A1A1A] inline-flex items-center gap-2 transition-all duration-200 hover:bg-[#1A1A1A] hover:text-white cursor-pointer;
+}
+
+.btn-dark {
+  @apply bg-[#1A1A1A] text-white font-semibold px-[27px] py-[20px] rounded-[2px] inline-flex items-center gap-2 transition-all duration-200 hover:brightness-110 cursor-pointer;
+}
+
+.eyebrow {
+  @apply flex flex-row items-center gap-[10px] text-[#1756B5] text-[18px];
+}
+
+.section-pad {
+  @apply py-[120px];
+}
+
+.container-std {
+  @apply w-full px-[20px] mx-auto;
+}
+
+.container-lg {
+  @apply max-w-[1720px] px-[20px] mx-auto;
+}
