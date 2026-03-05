@@ -37,8 +37,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Solución estructural eficiente para obras civiles. Unión directa de barras sin
-            modificar el acero de refuerzo. Ahorra hasta un 10% del acero.
+            Los conectores mecánicos te ahorrarán hasta un 10% del acero.
+            Unión directa de barras sin modificar el acero de refuerzo.
+            Solución eficiente, segura y compatible con normativas vigentes.
           </motion.p>
 
           <motion.div

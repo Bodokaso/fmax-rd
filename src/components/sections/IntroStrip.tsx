@@ -76,11 +76,11 @@ const IntroStrip = () => {
             </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
-                Ahorro de Acero
+                ¡Dile Adiós al Traslapo!
               </h2>
               <p className="text-body-text text-base mt-1">
-                Reduce hasta un 10% el uso de acero eliminando el traslape tradicional de
-                varillas.
+                Los conectores mecánicos eliminan el traslape tradicional y te ahorran hasta
+                un 10% del acero.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ const IntroStrip = () => {
             style={{ marginTop: isMobile ? '0px' : '-340px' }}
           >
             <h3 className="font-heading font-bold text-dark text-[24px] mb-6">
-              ¡Tu Solución Empieza Aquí!
+              ¡Cotiza Sin Compromiso!
             </h3>
 
             {submitted ? (

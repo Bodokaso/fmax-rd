@@ -6,7 +6,7 @@ const socials = [
 ];
 
 const pageLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Precios', 'Contacto'];
-const appLinks = ['Columnas', 'Puentes', 'Losas', 'Pilotes', 'Muros', 'Cimentaciones'];
+const appLinks = ['Columnas', 'Muros Estructurales', 'Losas en Puentes', 'Puentes', 'Pilotes', 'Túneles', 'Cimentaciones'];
 const utilLinks = ['Guía de Estilos', 'Licencias', 'Changelog', 'Contacto'];
 
 const Footer = () => {

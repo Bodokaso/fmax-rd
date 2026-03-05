@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 const features = [
-  'Continuidad Estructural Real',
-  'Compatible con NSR2010 y CCP-14',
+  'Continuidad estructural real incluso en zonas críticas',
+  'Compatible con NSR10, CCP-14, ACI318 y ACI439',
   'Sin modificar el acero de refuerzo',
-  'Ideal para zonas críticas y confinadas',
+  'Ideal para espacios confinados y solapes insuficientes',
 ];
 
 const About = () => {
@@ -32,9 +32,14 @@ const About = () => {
           </h2>
 
           <p className="text-body-text text-[20px] font-body">
-            Resolvemos problemas de barras cortas, cortes imprecisos y arranques
-            insuficientes. Nuestro sistema de extrusión mecánica mantiene intactas las
-            propiedades del acero.
+            En la ejecución de obras civiles es frecuente encontrar barras de acero con
+            longitudes insuficientes, cortes imprecisos o arranques cortos que no permiten
+            realizar empalmes por traslape de forma adecuada. El empalme mecánico extruido
+            Tipo 2 ha sido diseñado para resolver eficazmente estas condiciones en obra,
+            permitiendo la unión directa de las barras sin modificar el acero de refuerzo.
+            Al tratarse de un sistema de unión por extrusión mecánica, se mantienen intactas
+            las propiedades físico-químicas y mecánicas del acero, garantizando una conexión
+            confiable y un comportamiento estructural adecuado.
           </p>
 
           <div className="grid grid-cols-2 gap-3 my-2">

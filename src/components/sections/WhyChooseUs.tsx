@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 
 const cards = [
   {
-    title: 'NSR2010 y CCP-14',
-    text: 'Cumplimos con las normas colombianas y latinoamericanas de construcción estructural.',
+    title: 'NSR10, CCP-14',
+    text: 'Cumplimos con NSR10, CCP-14, ACI318 y ACI439 para garantizar empalmes Tipo 2 certificados.',
   },
   {
     title: 'ACI318 y ACI439',
-    text: 'Estándares internacionales que garantizan la calidad y seguridad del empalme.',
+    text: 'Pruebas de tracción según ACI 439. Resultado mínimo de 550 MPa por muestra ensayada.',
   },
   {
     title: '550 MPa Garantizados',
@@ -16,6 +16,14 @@ const cards = [
   {
     title: 'Servicio en Obra',
     text: 'Llevamos la máquina al sitio. Nuestro equipo instala y verifica in situ.',
+  },
+  {
+    title: 'Sin Tercio Medio',
+    text: 'No depende del tercio medio. Permite continuidad estructural en zonas críticas.',
+  },
+  {
+    title: 'Mejora Fluencia',
+    text: 'Descongestionamiento de barras mejora la fluencia del hormigón en el elemento.',
   },
 ];
 

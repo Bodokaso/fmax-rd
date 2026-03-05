@@ -10,7 +10,7 @@ const steps = [
   {
     num: '02',
     title: 'Posicionamiento del Empalme',
-    text: 'Se coloca el conector F-MAX a manera de camisa sobre las barras a unir.',
+    text: 'Se coloca el empalme extruido F-Max a manera de camisa y se hacen deformaciones determinadas según su diámetro.',
   },
   {
     num: '03',
@@ -51,6 +51,32 @@ const Process = () => {
           <button className="btn-primary" onClick={() => setVideoOpen(true)}>
             Ver Video
           </button>
+
+          <div className="mt-8 overflow-x-auto">
+            <p className="font-heading font-bold text-dark text-base mb-3">
+              Especificaciones Técnicas — Máquina FP65
+            </p>
+            <table className="w-full border-collapse text-sm font-body">
+              <thead>
+                <tr className="bg-dark text-white">
+                  <th className="px-4 py-3 text-left font-semibold">Referencia</th>
+                  <th className="px-4 py-3 text-left font-semibold">Rango MPa</th>
+                  <th className="px-4 py-3 text-left font-semibold">Voltage</th>
+                  <th className="px-4 py-3 text-left font-semibold">Frecuencia</th>
+                  <th className="px-4 py-3 text-left font-semibold">Potencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border border-gray-200">
+                  <td className="px-4 py-3 text-dark font-semibold">FP65</td>
+                  <td className="px-4 py-3 text-body-text">0–65</td>
+                  <td className="px-4 py-3 text-body-text">220V</td>
+                  <td className="px-4 py-3 text-body-text">60Hz</td>
+                  <td className="px-4 py-3 text-body-text">3KW</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* COL 2 — steps */}
