@@ -8,9 +8,6 @@ import Process from './components/sections/Process';
 import WhyChooseUs from './components/sections/WhyChooseUs';
 import Projects from './components/sections/Projects';
 import Stats from './components/sections/Stats';
-import Pricing from './components/sections/Pricing';
-import Testimonials from './components/sections/Testimonials';
-import Blog from './components/sections/Blog';
 import CTABanner from './components/sections/CTABanner';
 
 function App() {
@@ -26,9 +23,6 @@ function App() {
         <WhyChooseUs />
         <Projects />
         <Stats />
-        <Pricing />
-        <Testimonials />
-        <Blog />
         <CTABanner />
       </main>
       <Footer />

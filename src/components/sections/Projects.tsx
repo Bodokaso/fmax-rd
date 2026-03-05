@@ -37,7 +37,11 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gray-300 w-full h-[280px] group-hover:brightness-110 transition duration-300" />
+              <img
+                src={`/images/project-${project.id}.jpeg`}
+                alt={project.title}
+                className="w-full h-[280px] object-cover group-hover:brightness-110 transition duration-300"
+              />
               <div className="bg-secondary text-white p-4">
                 <p className="text-sm opacity-80 mb-1">
                   {project.date} — {project.location}

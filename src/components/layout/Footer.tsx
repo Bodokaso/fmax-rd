@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const socials = [
   { label: 'FB', href: '#' },
   { label: 'X', href: '#' },
@@ -12,15 +10,6 @@ const appLinks = ['Columnas', 'Puentes', 'Losas', 'Pilotes', 'Muros', 'Cimentaci
 const utilLinks = ['Guía de Estilos', 'Licencias', 'Changelog', 'Contacto'];
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleNewsletter = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmail('');
-    setSubscribed(true);
-  };
-
   return (
     <footer className="bg-[#101418] pt-[60px] md:pt-[100px] pb-[45px]">
       <div className="container-std">
@@ -78,7 +67,7 @@ const Footer = () => {
 
           {/* COL 2 */}
           <div className="bg-[#1C2024] p-[40px]">
-            <div className="flex flex-wrap gap-[30px] md:gap-[50px] items-start mb-8">
+            <div className="flex flex-wrap gap-[30px] md:gap-[50px] items-start">
               <div className="min-w-[140px]">
                 <h3 className="font-heading font-bold text-white mb-4 text-base">Páginas</h3>
                 <div className="flex flex-col gap-2">
@@ -111,28 +100,6 @@ const Footer = () => {
                   ))}
                 </div>
               </div>
-            </div>
-
-            <div className="w-full">
-              <label className="text-white/70 font-body text-sm block mb-2">
-                Suscríbete al Newsletter
-              </label>
-              <form onSubmit={handleNewsletter} className="flex w-full">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 px-4 py-[20px] bg-[#101418] text-white placeholder:text-white/40 border-0 focus:outline-none focus:ring-1 focus:ring-primary font-body text-base min-w-0"
-                  placeholder="Ingresa tu correo electrónico"
-                />
-                <button type="submit" className="btn-primary shrink-0 rounded-none">
-                  Suscribirse
-                </button>
-              </form>
-              {subscribed && (
-                <p className="text-primary text-sm mt-2">¡Gracias por suscribirte!</p>
-              )}
             </div>
           </div>
         </div>

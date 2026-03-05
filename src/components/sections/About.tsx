@@ -12,7 +12,7 @@ const About = () => {
     <section id="nosotros" className="py-[120px] bg-white">
       <div className="container-std grid grid-cols-1 md:grid-cols-2 gap-[40px] items-center">
         {/* COL 1 — image placeholder */}
-        <div className="bg-gray-300 w-full h-[300px] md:h-[520px] rounded-sm" />
+        <img src="/images/about.jpg" alt="Empalme mecánico F MAX RD" className="w-full h-[300px] md:h-[520px] object-cover rounded-sm" />
 
         {/* COL 2 — content */}
         <motion.div

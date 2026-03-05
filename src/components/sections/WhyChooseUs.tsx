@@ -22,9 +22,13 @@ const cards = [
 const WhyChooseUs = () => {
   return (
     <section className="relative bg-[#101418] py-[120px] overflow-hidden md:min-h-[907px]">
-      {/* Background image placeholder — desktop only */}
-      <div className="hidden md:block absolute right-0 top-0 w-1/2 h-full z-0">
-        <div className="bg-gray-700 w-full h-full" />
+      {/* Background images — desktop only */}
+      <div
+        className="absolute right-0 top-0 w-1/2 h-full hidden md:grid gap-2 p-2 z-0"
+        style={{ gridTemplateRows: '1fr 1fr' }}
+      >
+        <img src="/images/why-choose-1.jpg" alt="F MAX RD en obra" className="w-full h-full object-cover" />
+        <img src="/images/why-choose-2.jpg" alt="F MAX RD empalme" className="w-full h-full object-cover" />
       </div>
 
       {/* Spinning badge — desktop only */}

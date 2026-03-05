@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const steps = [
@@ -24,12 +25,14 @@ const steps = [
 ];
 
 const Process = () => {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <section className="py-[120px] bg-white">
       <div className="container-std grid grid-cols-1 md:grid-cols-2 gap-[40px] md:gap-[60px]">
         {/* COL 1 */}
         <div>
-          <div className="bg-gray-300 w-full h-[300px] mb-6" />
+          <img src="/images/process.jpeg" alt="Proceso de instalación F MAX RD" className="w-full h-[300px] object-cover mb-6" />
 
           <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
             <span>⚡</span>
@@ -45,7 +48,9 @@ const Process = () => {
             preciso y verificable.
           </p>
 
-          <button className="btn-primary">Ver Proyectos</button>
+          <button className="btn-primary" onClick={() => setVideoOpen(true)}>
+            Ver Video
+          </button>
         </div>
 
         {/* COL 2 — steps */}
@@ -83,6 +88,37 @@ const Process = () => {
           </div>
         </div>
       </div>
+
+      {/* Video lightbox */}
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-[2000] flex flex-col items-center justify-center bg-black/90 p-4"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-[900px]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setVideoOpen(false)}
+              className="absolute top-[-50px] right-0 text-white text-[32px] font-bold hover:text-primary transition cursor-pointer bg-transparent border-0 leading-none z-10"
+            >
+              ✕ Cerrar
+            </button>
+            <video
+              src="/videos/fmax-demo.mp4"
+              controls
+              autoPlay
+              playsInline
+              controlsList="nodownload"
+              className="w-full rounded-sm shadow-2xl"
+              style={{ maxHeight: '80vh' }}
+            >
+              Tu navegador no soporta la reproducción de video.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

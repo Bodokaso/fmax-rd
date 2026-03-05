@@ -70,7 +70,7 @@ const Stats = () => {
         <div className="bg-white grid grid-cols-1 md:grid-cols-2 items-center md:pr-[40px]">
           {/* COL 1 — image + phone overlay */}
           <div className="relative w-full min-h-[300px] md:min-h-[525px]">
-            <div className="bg-gray-300 w-full h-full absolute inset-0" />
+            <img src="/images/stats-cta.jpeg" alt="F MAX RD equipo" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute bottom-0 left-0 flex items-center gap-[10px] p-[20px] bg-secondary w-full md:w-[320px] h-[100px] z-10">
               <div className="w-[60px] h-[60px] rounded-full bg-primary flex items-center justify-center shrink-0">
                 <span className="text-dark text-xl">📞</span>
@@ -85,7 +85,7 @@ const Stats = () => {
           </div>
 
           {/* COL 2 — CTA text */}
-          <div className="flex flex-col justify-center gap-4 py-10 px-6 md:px-0">
+          <div className="flex flex-col justify-center gap-4 py-10 pl-[40px] md:pl-[60px]">
             <div className="flex items-center gap-2 text-secondary text-[18px]">
               <span>⚡</span>
               <span>CONTÁCTANOS</span>
