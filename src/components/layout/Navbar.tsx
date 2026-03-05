@@ -49,7 +49,11 @@ const Navbar = () => {
 
       {/* Main nav */}
       <div className="h-[80px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
-        <span className="font-heading font-bold text-xl md:text-2xl text-dark">F MAX RD</span>
+        <img
+          src="/images/logo-bw.jpeg"
+          alt="F MAX RD"
+          className="h-[52px] w-auto object-contain"
+        />
 
         <nav className="hidden md:flex gap-8">
           {navLinks.map(({ label, id }) => (

@@ -18,7 +18,11 @@ const Footer = () => {
           {/* COL 1 */}
           <div className="bg-[#1C2024]">
             <div className="p-[50px_40px_40px_40px]">
-              <span className="text-white font-heading font-bold text-2xl">F MAX RD</span>
+              <img
+                src="/images/logo-bw.jpeg"
+                alt="F MAX RD"
+                className="h-[52px] w-auto object-contain"
+              />
             </div>
 
             <div className="flex flex-col gap-4 px-10 pb-8">
