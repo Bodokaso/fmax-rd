@@ -29,33 +29,9 @@ const cards = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative bg-[#101418] py-[120px] overflow-hidden md:min-h-[907px]">
-      {/* Background images — desktop only */}
-      <div
-        className="absolute right-0 top-0 w-1/2 h-full hidden md:grid gap-2 p-2 z-0"
-        style={{ gridTemplateRows: '1fr 1fr' }}
-      >
-        <img src="/images/why-choose-1.jpg" alt="F MAX RD en obra" className="w-full h-full object-cover" />
-        <img src="/images/why-choose-2.jpg" alt="F MAX RD empalme" className="w-full h-full object-cover" />
-      </div>
-
-      {/* Spinning badge — desktop only */}
-      <div
-        className="hidden md:flex absolute z-20"
-        style={{ right: 'calc(50% - 57px)', top: '50%', transform: 'translateY(-50%)' }}
-      >
-        <motion.div
-          className="w-[115px] h-[115px] rounded-full bg-primary flex items-center justify-center cursor-pointer"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-        >
-          <span className="text-dark text-2xl font-bold">→</span>
-        </motion.div>
-      </div>
-
-      {/* Grid */}
-      <div className="relative z-10 container-lg grid grid-cols-1 md:grid-cols-2 gap-[40px] md:gap-[60px] items-center">
-        {/* COL 1 */}
+    <section className="relative bg-[#101418] py-[89px] md:py-[144px] overflow-hidden">
+      <div className="container-lg grid grid-cols-1 gap-[55px] md:[grid-template-columns:minmax(0,1.618fr)_minmax(0,1fr)]">
+        {/* COL 1 — Content */}
         <motion.div
           className="flex flex-col gap-6"
           initial={{ opacity: 0, y: 30 }}
@@ -68,16 +44,15 @@ const WhyChooseUs = () => {
             <span>¿POR QUÉ F MAX RD?</span>
           </div>
 
-          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-white leading-[48px]">
+          <h2 className="font-heading text-[28px] md:text-[52px] font-bold text-white leading-[1.3]">
             Solución Estructural que Cumple las Normas
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[21px] mt-2">
             {cards.map((card, index) => (
               <motion.div
                 key={card.title}
-                className="border border-white/10 p-[25px] flex flex-col gap-3"
-                style={{ minHeight: '209px' }}
+                className="bg-[#1C2024] border border-white/10 p-[34px] flex flex-col gap-[21px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -95,8 +70,44 @@ const WhyChooseUs = () => {
           </p>
         </motion.div>
 
-        {/* COL 2 — image fills bg behind it (desktop only) */}
-        <div className="hidden md:block" />
+        {/* COL 2 — Image grid */}
+        <div className="hidden md:flex flex-col justify-center" style={{ paddingTop: '144px' }}>
+        <div className="flex items-center justify-center">
+        <div
+          className="grid gap-[13px]"
+          style={{
+            gridTemplateColumns: '1fr 1fr',
+            gridTemplateRows: '1fr 1fr',
+            aspectRatio: '1 / 1',
+            width: '104%',
+          }}
+        >
+          {/* Position 1 — top left: invisible */}
+          <div className="rounded-sm bg-transparent" />
+
+          {/* Position 2 — top right: first image */}
+          <div className="overflow-hidden rounded-sm">
+            <img
+              src="/images/why-choose-1.jpg"
+              alt="F MAX RD en obra"
+              className="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+
+          {/* Position 3 — bottom left: second image */}
+          <div className="overflow-hidden rounded-sm">
+            <img
+              src="/images/why-choose-2.jpg"
+              alt="F MAX RD empalme"
+              className="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+
+          {/* Position 4 — bottom right: invisible */}
+          <div className="rounded-sm bg-transparent" />
+        </div>
+        </div>
+        </div>
       </div>
     </section>
   );

@@ -11,21 +11,21 @@ const utilLinks = ['Guía de Estilos', 'Licencias', 'Changelog', 'Contacto'];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#101418] pt-[60px] md:pt-[100px] pb-[45px]">
+    <footer className="bg-[#101418] pt-[144px] pb-[55px]">
       <div className="container-std">
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[50px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[34px] mb-[50px]">
           {/* COL 1 */}
           <div className="bg-[#1C2024]">
             <div className="p-[50px_40px_40px_40px]">
               <img
-                src="/images/logo-bw.jpeg"
+                src="/images/logo-wb.jpg"
                 alt="F MAX RD"
                 className="h-[52px] w-auto object-contain"
               />
             </div>
 
-            <div className="flex flex-col gap-4 px-10 pb-8">
+            <div className="flex flex-col gap-[21px] px-10 pb-8">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm">
                   📞
@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex gap-3 px-10 pb-10">
+            <div className="flex gap-[21px] px-10 pb-10">
               {socials.map(({ label, href }) => (
                 <a
                   key={label}
@@ -71,7 +71,7 @@ const Footer = () => {
 
           {/* COL 2 */}
           <div className="bg-[#1C2024] p-[40px]">
-            <div className="flex flex-wrap gap-[30px] md:gap-[50px] items-start">
+            <div className="flex flex-wrap gap-[34px] items-start">
               <div className="min-w-[140px]">
                 <h3 className="font-heading font-bold text-white mb-4 text-base">Páginas</h3>
                 <div className="flex flex-col gap-2">

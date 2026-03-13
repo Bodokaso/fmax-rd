@@ -6,7 +6,7 @@ const scrollTo = (id: string) => {
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative min-h-[600px] md:min-h-[706px] pt-[100px] pb-[140px]">
+    <section id="inicio" className="relative min-h-[610px] md:min-h-[700px] pt-[89px] pb-[144px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <img src="/images/hero-bg.jpeg" alt="F MAX RD construcción" className="absolute inset-0 w-full h-full object-cover" />
@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative z-10 container-lg h-full flex flex-col justify-center">
         <div className="max-w-full md:max-w-[800px]">
           <motion.h1
-            className="font-heading text-[40px] md:text-[70px] leading-tight md:leading-[77px] font-bold text-white"
+            className="font-heading text-[52px] md:text-[84px] leading-tight md:leading-[92px] font-bold text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -32,7 +32,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-[20px] mb-[40px] md:mb-[65px] max-w-[600px] text-white text-[16px] md:text-[20px] font-body leading-relaxed"
+            className="mt-[21px] mb-[55px] max-w-[600px] text-white text-[16px] md:text-[20px] font-body leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -43,7 +43,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 flex-wrap"
+            className="flex flex-col sm:flex-row gap-[21px] flex-wrap"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

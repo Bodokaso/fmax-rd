@@ -9,10 +9,10 @@ const features = [
 
 const About = () => {
   return (
-    <section id="nosotros" className="py-[120px] bg-white">
-      <div className="container-std grid grid-cols-1 md:grid-cols-2 gap-[40px] items-center">
-        {/* COL 1 — image placeholder */}
-        <img src="/images/about.jpg" alt="Empalme mecánico F MAX RD" className="w-full h-[300px] md:h-[520px] object-cover rounded-sm" />
+    <section id="nosotros" className="py-[89px] md:py-[144px] bg-white">
+      <div className="container-std grid grid-cols-1 gap-[34px] md:[grid-template-columns:minmax(0,1fr)_minmax(0,1.618fr)] md:gap-[55px] items-center">
+        {/* COL 1 — image */}
+        <img src="/images/about.jpg" alt="Empalme mecánico F MAX RD" className="w-full h-[250px] md:h-[520px] object-cover rounded-sm" />
 
         {/* COL 2 — content */}
         <motion.div
@@ -27,11 +27,11 @@ const About = () => {
             <span>SOBRE NOSOTROS</span>
           </div>
 
-          <h2 className="font-heading text-[32px] md:text-[40px] font-bold leading-[48px] text-dark">
+          <h2 className="font-heading text-[28px] md:text-[52px] font-bold text-dark mt-[13px]">
             Empalme Mecánico Confiable para Obras Civiles
           </h2>
 
-          <p className="text-body-text text-[20px] font-body">
+          <p className="text-body-text text-[20px] font-body mt-[21px]">
             En la ejecución de obras civiles es frecuente encontrar barras de acero con
             longitudes insuficientes, cortes imprecisos o arranques cortos que no permiten
             realizar empalmes por traslape de forma adecuada. El empalme mecánico extruido
@@ -42,7 +42,7 @@ const About = () => {
             confiable y un comportamiento estructural adecuado.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 my-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[13px] my-[21px]">
             {features.map((feat) => (
               <div key={feat} className="flex items-start gap-2">
                 <span className="text-primary">⚡</span>
@@ -51,9 +51,9 @@ const About = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-6 mt-2">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[21px] mt-[21px]">
             <button className="btn-dark">Ver Más</button>
-            <div className="bg-[#EEF3F6] p-5 rounded">
+            <div className="bg-[#EEF3F6] p-[21px] rounded w-full sm:w-auto">
               <h3 className="text-[36px] font-bold text-secondary font-heading">550</h3>
               <div className="flex gap-1 my-1">
                 {Array.from({ length: 5 }).map((_, i) => (

@@ -38,7 +38,7 @@ const Stats = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section className="relative pt-[120px] pb-0">
+    <section className="relative pt-[89px] md:pt-[120px] pb-0">
       {/* Dark background block */}
       <div
         className="absolute top-0 left-0 w-full bg-[#101418] z-0"
@@ -49,7 +49,7 @@ const Stats = () => {
         {/* Stats bar */}
         <div
           ref={ref}
-          className="flex flex-wrap justify-between items-center gap-[20px] md:gap-[30px] w-full mb-[50px] py-[20px]"
+          className="flex flex-wrap justify-center md:justify-between items-center gap-[21px] md:gap-[34px] w-full mb-[34px] md:mb-[55px] py-[20px]"
         >
           {stats.map((stat, index) => (
             <React.Fragment key={stat.label}>
@@ -69,9 +69,9 @@ const Stats = () => {
         {/* CTA Grid */}
         <div className="bg-white grid grid-cols-1 md:grid-cols-2 items-center md:pr-[40px]">
           {/* COL 1 — image + phone overlay */}
-          <div className="relative w-full min-h-[300px] md:min-h-[525px]">
+          <div className="relative w-full min-h-[280px] md:min-h-[525px]">
             <img src="/images/stats-cta.jpeg" alt="F MAX RD equipo" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute bottom-0 left-0 flex items-center gap-[10px] p-[20px] bg-secondary w-full md:w-[320px] h-[100px] z-10">
+            <div className="absolute bottom-0 left-0 flex items-center gap-[13px] p-[13px] md:p-[20px] bg-secondary w-full md:w-[320px] min-h-[80px] md:h-[100px] z-10">
               <div className="w-[60px] h-[60px] rounded-full bg-primary flex items-center justify-center shrink-0">
                 <span className="text-dark text-xl">📞</span>
               </div>
@@ -85,17 +85,17 @@ const Stats = () => {
           </div>
 
           {/* COL 2 — CTA text */}
-          <div className="flex flex-col justify-center gap-4 py-10 pl-[40px] md:pl-[60px]">
+          <div className="flex flex-col justify-center gap-[13px] md:gap-[21px] p-[34px] md:py-10 md:pl-0">
             <div className="flex items-center gap-2 text-secondary text-[18px]">
               <span>⚡</span>
               <span>CONTÁCTANOS</span>
             </div>
 
-            <h2 className="font-heading text-[40px] font-bold text-dark leading-[48px]">
+            <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-tight">
               ¡Llámanos o Escríbenos Para Comenzar!
             </h2>
 
-            <p className="text-body-text text-[20px] font-body">
+            <p className="text-body-text text-[16px] md:text-[20px] font-body">
               Llevamos nuestra máquina directamente a tu obra. Cotiza sin compromiso para
               columnas, muros, puentes o cimentaciones.
             </p>

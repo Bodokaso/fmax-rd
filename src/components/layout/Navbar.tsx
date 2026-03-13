@@ -25,8 +25,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top bar */}
-      <div className="h-[61px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
-        <div className="flex gap-6">
+      <div className="h-[55px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
+        <div className="flex gap-[34px]">
           <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
             (829) 470-7193
           </a>
@@ -48,14 +48,14 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <div className="h-[80px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
+      <div className="h-[89px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
         <img
           src="/images/logo-bw.jpeg"
           alt="F MAX RD"
           className="h-[52px] w-auto object-contain"
         />
 
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-[34px]">
           {navLinks.map(({ label, id }) => (
             <button
               key={id}

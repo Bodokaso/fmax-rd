@@ -3,10 +3,10 @@ import { projects } from '../../data/projects';
 
 const Projects = () => {
   return (
-    <section id="proyectos" className="py-[120px] bg-white">
+    <section id="proyectos" className="py-[144px] bg-white">
       <div className="container-std">
         {/* Title row */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-[20px] md:gap-[40px] mb-[50px]">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-[34px] mb-[55px]">
           <div>
             <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
               <span>⚡</span>
@@ -27,7 +27,7 @@ const Projects = () => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[21px] mt-2">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

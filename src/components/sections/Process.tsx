@@ -28,22 +28,22 @@ const Process = () => {
   const [videoOpen, setVideoOpen] = useState(false);
 
   return (
-    <section className="py-[120px] bg-white">
-      <div className="container-std grid grid-cols-1 md:grid-cols-2 gap-[40px] md:gap-[60px]">
+    <section className="py-[89px] md:py-[144px] bg-white">
+      <div className="container-std grid grid-cols-1 gap-[34px] md:[grid-template-columns:minmax(0,1fr)_minmax(0,1.618fr)] md:gap-[55px]">
         {/* COL 1 */}
         <div>
-          <img src="/images/process.jpeg" alt="Proceso de instalación F MAX RD" className="w-full h-[300px] object-cover mb-6" />
+          <img src="/images/process.jpeg" alt="Proceso de instalación F MAX RD" className="w-full h-[220px] md:h-[300px] object-cover mb-[21px]" />
 
           <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
             <span>⚡</span>
             <span>PROCESO DE APLICACIÓN</span>
           </div>
 
-          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">
+          <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-tight">
             ¿Cómo Se Instala el Empalme?
           </h2>
 
-          <p className="text-body-text text-[20px] mt-4 mb-6">
+          <p className="text-body-text text-[16px] md:text-[20px] mt-[13px] mb-[21px]">
             Nuestro equipo opera la máquina directamente en obra. El proceso es rápido,
             preciso y verificable.
           </p>
@@ -52,27 +52,27 @@ const Process = () => {
             Ver Video
           </button>
 
-          <div className="mt-8 overflow-x-auto">
+          <div className="mt-[21px] overflow-x-auto w-full">
             <p className="font-heading font-bold text-dark text-base mb-3">
               Especificaciones Técnicas — Máquina FP65
             </p>
-            <table className="w-full border-collapse text-sm font-body">
+            <table className="w-full border-collapse text-xs md:text-sm font-body">
               <thead>
                 <tr className="bg-dark text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Referencia</th>
-                  <th className="px-4 py-3 text-left font-semibold">Rango MPa</th>
-                  <th className="px-4 py-3 text-left font-semibold">Voltage</th>
-                  <th className="px-4 py-3 text-left font-semibold">Frecuencia</th>
-                  <th className="px-4 py-3 text-left font-semibold">Potencia</th>
+                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Referencia</th>
+                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Rango MPa</th>
+                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Voltage</th>
+                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Frecuencia</th>
+                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Potencia</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border border-gray-200">
-                  <td className="px-4 py-3 text-dark font-semibold">FP65</td>
-                  <td className="px-4 py-3 text-body-text">0–65</td>
-                  <td className="px-4 py-3 text-body-text">220V</td>
-                  <td className="px-4 py-3 text-body-text">60Hz</td>
-                  <td className="px-4 py-3 text-body-text">3KW</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-dark font-semibold">FP65</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">0–65</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">220V</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">60Hz</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">3KW</td>
                 </tr>
               </tbody>
             </table>
@@ -92,11 +92,11 @@ const Process = () => {
             style={{ height: '100%' }}
           />
 
-          <div className="flex flex-col gap-8 relative z-10">
+          <div className="flex flex-col gap-[21px] md:gap-[34px] relative z-10">
             {steps.map((step, index) => (
               <motion.div
                 key={step.num}
-                className="flex items-start gap-5"
+                className="flex items-start gap-[21px]"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
@@ -107,7 +107,7 @@ const Process = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-dark text-xl">{step.title}</h3>
-                  <p className="text-body-text font-body mt-1">{step.text}</p>
+                  <p className="text-body-text font-body mt-[13px]">{step.text}</p>
                 </div>
               </motion.div>
             ))}

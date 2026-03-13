@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const CTABanner = () => {
   return (
-    <section id="contacto" className="bg-[#1756B5] py-[60px] md:py-[80px]">
+    <section id="contacto" className="bg-[#1756B5] py-[89px]">
       <div className="container-std">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -11,7 +11,7 @@ const CTABanner = () => {
           viewport={{ once: true }}
         >
           {/* Top row */}
-          <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 md:gap-[20px] mb-[20px]">
+          <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 md:gap-[21px] mb-[21px]">
             <div style={{ maxWidth: '480px' }}>
               <p className="text-white text-[18px] font-body mb-2">
                 ¿Listo para trabajar con nosotros?
@@ -19,14 +19,14 @@ const CTABanner = () => {
               <a
                 href="mailto:fmaxrd@gmail.com"
                 className="text-white font-body block hover:text-primary transition"
-                style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: 500 }}
+                style={{ fontSize: '34px', fontWeight: 500 }}
               >
                 fmaxrd@gmail.com
               </a>
             </div>
 
             <h2
-              className="font-heading font-bold text-white text-[40px] md:text-[70px]"
+              className="font-heading font-bold text-white text-[55px] md:text-[89px]"
               style={{ lineHeight: 1 }}
             >
               Contáctanos

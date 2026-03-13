@@ -3,12 +3,12 @@ import { services } from '../../data/services';
 
 const Services = () => {
   return (
-    <section id="servicios" className="relative pt-[120px] pb-0 overflow-hidden">
+    <section id="servicios" className="relative pt-[144px] pb-0 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[400px] z-0 bg-[#1a1a1a]" />
 
       <div className="container-std relative z-10">
         {/* Title area */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5 mb-[50px]">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-[34px] mb-[55px]">
           <div className="max-w-full md:max-w-[550px]">
             <div className="flex items-center gap-2 text-primary text-[18px] mb-3">
               <span>⚡</span>
