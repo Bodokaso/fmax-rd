@@ -1,4 +1,3 @@
-import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useCountUp } from '../../hooks/useCountUp';
 
@@ -20,7 +19,7 @@ const StatCounter = ({
 }) => {
   const count = useCountUp(value, 2000, isActive);
   return (
-    <div className="flex flex-col items-center text-center w-[45%] md:w-auto">
+    <div className="flex flex-col items-center text-center">
       <div className="flex items-end gap-1 mb-2">
         <span className="font-heading text-[40px] md:text-[60px] font-bold text-white leading-none">
           {count}
@@ -47,21 +46,21 @@ const Stats = () => {
         {/* Stats bar */}
         <div
           ref={ref}
-          className="flex flex-wrap justify-center md:justify-between items-center gap-[21px] md:gap-[34px] w-full mb-[34px] md:mb-[55px] py-[20px]"
+          className="flex justify-center items-center gap-[89px] w-full mb-[34px] md:mb-[55px] py-[20px]"
         >
-          {stats.map((stat, index) => (
-            <React.Fragment key={stat.label}>
-              <StatCounter
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-                isActive={inView}
-              />
-              {index < stats.length - 1 && (
-                <div className="hidden md:block w-px h-[60px] bg-white/20" />
-              )}
-            </React.Fragment>
-          ))}
+          <StatCounter
+            value={stats[0].value}
+            suffix={stats[0].suffix}
+            label={stats[0].label}
+            isActive={inView}
+          />
+          <div className="w-px h-[60px] bg-white/20 shrink-0" />
+          <StatCounter
+            value={stats[1].value}
+            suffix={stats[1].suffix}
+            label={stats[1].label}
+            isActive={inView}
+          />
         </div>
 
         {/* CTA Grid */}
