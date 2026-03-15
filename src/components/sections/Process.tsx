@@ -35,7 +35,6 @@ const Process = () => {
           <img src="/images/process.jpeg" alt="Proceso de instalación F MAX RD" className="w-full h-[220px] md:h-[300px] object-cover mb-[21px]" />
 
           <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
-            <span>⚡</span>
             <span>PROCESO DE APLICACIÓN</span>
           </div>
 

@@ -40,7 +40,6 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-2 text-primary text-[18px]">
-            <span>⚡</span>
             <span>¿POR QUÉ F MAX RD?</span>
           </div>
 
@@ -58,7 +57,6 @@ const WhyChooseUs = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className="text-primary text-2xl">⚡</span>
                 <h3 className="font-heading font-bold text-white text-lg">{card.title}</h3>
                 <p className="text-white/70 font-body text-base">{card.text}</p>
               </motion.div>

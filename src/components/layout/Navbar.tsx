@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 const navLinks = [
   { label: 'Inicio', id: 'inicio' },
@@ -9,10 +10,10 @@ const navLinks = [
 ];
 
 const socials = [
-  { label: 'FB', href: '#' },
-  { label: 'X', href: '#' },
-  { label: 'IG', href: '#' },
-  { label: 'IN', href: '#' },
+  { icon: <FaFacebookF />, href: "#", hover: "hover:bg-[#1877F2]" },
+  { icon: <FaXTwitter />, href: "#", hover: "hover:bg-black" },
+  { icon: <FaInstagram />, href: "#", hover: "hover:bg-[#E4405F]" },
+  { icon: <FaLinkedinIn />, href: "#", hover: "hover:bg-[#0A66C2]" },
 ];
 
 const scrollTo = (id: string) => {
@@ -35,13 +36,13 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex gap-3">
-          {socials.map(({ label, href }) => (
+          {socials.map(({ icon, href, hover }, index) => (
             <a
-              key={label}
+              key={index}
               href={href}
-              className="w-8 h-8 bg-dark text-white text-xs flex items-center justify-center hover:bg-primary hover:text-dark transition"
+              className={`w-8 h-8 bg-dark text-white flex items-center justify-center transition ${hover}`}
             >
-              {label}
+              {icon}
             </a>
           ))}
         </div>

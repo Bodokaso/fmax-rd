@@ -11,7 +11,6 @@ const Services = () => {
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-[34px] mb-[55px]">
           <div className="max-w-full md:max-w-[550px]">
             <div className="flex items-center gap-2 text-primary text-[18px] mb-3">
-              <span>⚡</span>
               <span>SERVICIOS</span>
             </div>
             <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-white leading-[48px]">

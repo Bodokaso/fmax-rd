@@ -43,7 +43,6 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-[50px]">
             <div>
               <div className="flex items-center gap-2 text-primary text-[18px] mb-3">
-                <span>⚡</span>
                 <span>TESTIMONIOS</span>
               </div>
               <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">

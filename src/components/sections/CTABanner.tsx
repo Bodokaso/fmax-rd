@@ -43,7 +43,7 @@ const CTABanner = () => {
               compatibles con normativas vigentes.
             </p>
             <a href="mailto:fmaxrd@gmail.com" className="btn-primary shrink-0 self-start md:self-auto">
-              ⚡ Escríbenos
+              Escríbenos
             </a>
           </div>
         </motion.div>

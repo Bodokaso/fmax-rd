@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import type { ContactFormData } from '../../types';
+import { FaWhatsapp } from "react-icons/fa";
 
 const inputClass =
   'w-full bg-white border-0 px-4 py-3 mb-1 font-body text-dark text-base focus:outline-none focus:ring-2 focus:ring-dark';
@@ -53,7 +54,7 @@ const IntroStrip = () => {
           {/* Point 1 */}
           <div className="flex items-start gap-4">
             <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              ⚡
+              ●
             </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
@@ -72,7 +73,7 @@ const IntroStrip = () => {
           {/* Point 2 */}
           <div className="flex items-start gap-4">
             <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              🔧
+              ●
             </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
@@ -163,11 +164,18 @@ const IntroStrip = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 ${
+                  className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 flex items-center justify-center gap-2 ${
                     loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
                   }`}
                 >
-                  {loading ? 'Enviando...' : 'Enviar Consulta'}
+                  {loading ? (
+                    'Enviando...'
+                  ) : (
+                    <>
+                      <FaWhatsapp className="text-green-400 text-xl" />
+                      Enviar Consulta
+                    </>
+                  )}
                 </button>
               </form>
             )}
