@@ -43,4 +43,16 @@ export const services: ServiceItem[] = [
     title: 'Cimentaciones',
     description: 'Unión directa en zapatas, vigas de cimentación y elementos de anclaje.',
   },
+  {
+    id: 8,
+    icon: '🏠',
+    title: 'Hormigón Celular',
+    description: 'Pregunta por nuestros servicios de hormigón celular.',
+  },
+  {
+    id: 9,
+    icon: '⚡',
+    title: 'Alquiler de Planta Eléctrica',
+    description: 'Pregunta por nuestros servicios de alquiler de plantas eléctricas.',
+  },
 ];

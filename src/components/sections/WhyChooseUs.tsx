@@ -7,11 +7,11 @@ const cards = [
   },
   {
     title: 'ACI318 y ACI439',
-    text: 'Pruebas de tracción según ACI 439. Resultado mínimo de 550 MPa por muestra ensayada.',
+    text: 'Pruebas de tracción según ACI 439. Resultado garantizado por muestra ensayada.',
   },
   {
-    title: '550 MPa Garantizados',
-    text: 'Cada empalme tipo 2 supera el esfuerzo mínimo requerido por normativa.',
+    title: 'Servicio Integral',
+    text: 'Llevamos la máquina al sitio, instalamos y verificamos. Todo en una sola visita.',
   },
   {
     title: 'Servicio en Obra',

@@ -51,17 +51,8 @@ const About = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[21px] mt-[21px]">
+          <div className="flex items-center mt-[21px]">
             <button className="btn-dark">Ver Más</button>
-            <div className="bg-[#EEF3F6] p-[21px] rounded w-full sm:w-auto">
-              <h3 className="text-[36px] font-bold text-secondary font-heading">550</h3>
-              <div className="flex gap-1 my-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-primary">⭐</span>
-                ))}
-              </div>
-              <p className="text-body-text text-sm">MPa mínimo garantizado</p>
-            </div>
           </div>
         </motion.div>
       </div>

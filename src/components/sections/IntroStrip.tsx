@@ -1,7 +1,3 @@
-// TODO: Replace 'f58d82e8-1af1-4a27-90ed-f60ef4571663' with actual
-// Web3Forms access key from https://web3forms.com
-// Free plan sends up to 250 emails/month
-
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import type { ContactFormData } from '../../types';
@@ -13,7 +9,6 @@ const errorClass = 'text-red-700 text-xs mt-1 mb-3 block';
 const IntroStrip = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -32,36 +27,22 @@ const IntroStrip = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setLoading(true);
-    setError(false);
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'f58d82e8-1af1-4a27-90ed-f60ef4571663',
-          subject: 'Nueva Consulta — F MAX RD',
-          from_name: 'F MAX RD Website',
-          name: data.fullName,
-          phone: data.phone,
-          project_type: data.projectType,
-          to: 'fmaxrd@gmail.com',
-        }),
-      });
-      const result = await response.json();
-      if (result.success) {
-        setSubmitted(true);
-        reset();
-      } else {
-        setError(true);
-      }
-    } catch {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
+
+    const message =
+      `Hola F MAX RD, me interesa cotizar sus servicios.%0A%0A` +
+      `*Nombre:* ${data.fullName}%0A` +
+      `*Teléfono:* ${data.phone}%0A` +
+      `*Tipo de Proyecto:* ${data.projectType}`;
+
+    const whatsappUrl = `https://wa.me/18294707193?text=${message}`;
+
+    setLoading(false);
+    setSubmitted(true);
+    reset();
+
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 800);
   };
 
   return (
@@ -121,7 +102,7 @@ const IntroStrip = () => {
                   ¡Mensaje Recibido!
                 </h3>
                 <p className="text-dark text-center">
-                  Nos pondremos en contacto contigo pronto.
+                  Abriendo WhatsApp para conectarte con nosotros...
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); reset(); }}
@@ -188,21 +169,6 @@ const IntroStrip = () => {
                 >
                   {loading ? 'Enviando...' : 'Enviar Consulta'}
                 </button>
-
-                {error && (
-                  <div className="mt-2">
-                    <p className="text-red-700 text-sm mt-2 text-center">
-                      Hubo un error al enviar. Por favor llámanos directamente al (829) 470-7193
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => setError(false)}
-                      className="text-dark underline text-xs mt-1 block text-center w-full"
-                    >
-                      Intentar de nuevo
-                    </button>
-                  </div>
-                )}
               </form>
             )}
           </div>
