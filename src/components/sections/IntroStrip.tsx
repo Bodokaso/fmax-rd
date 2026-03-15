@@ -162,21 +162,21 @@ const IntroStrip = () => {
                 )}
 
                 <button
-                  type="submit"
-                  disabled={loading}
-                  className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 flex items-center justify-center gap-2 ${
-                    loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
-                  }`}
-                >
-                  {loading ? (
-                    'Enviando...'
-                  ) : (
-                    <>
-                      <FaWhatsapp className="text-green-400 text-xl" />
-                      Enviar Consulta
-                    </>
-                  )}
-                </button>
+                type="submit"
+                disabled={loading}
+                className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 flex items-center justify-center gap-2 ${
+                  loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
+                }`}
+              >
+                {loading ? (
+                  'Enviando...'
+                ) : (
+                  <>
+                    <FaWhatsapp className="text-green-400 text-xl" />
+                    Enviar Consulta
+                  </>
+                )}
+              </button>
               </form>
             )}
           </div>

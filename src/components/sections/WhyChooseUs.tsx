@@ -58,7 +58,12 @@ const WhyChooseUs = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="font-heading font-bold text-white text-lg">{card.title}</h3>
-                <p className="text-white/70 font-body text-base">{card.text}</p>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary text-sm leading-none mt-[6px]">●</span>
+                  <p className="text-white/70 font-body text-base leading-relaxed">
+                    {card.text}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
