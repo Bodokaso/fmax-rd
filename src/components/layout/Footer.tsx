@@ -1,3 +1,5 @@
+import React from 'react';
+
 const socials = [
   { label: 'FB', href: '#' },
   { label: 'X', href: '#' },

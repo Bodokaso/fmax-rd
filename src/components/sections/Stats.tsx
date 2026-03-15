@@ -3,10 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { useCountUp } from '../../hooks/useCountUp';
 
 const stats = [
-  { value: 550, suffix: ' MPa', label: 'Garantizados' },
   { value: 10, suffix: '%', label: 'Ahorro en Acero' },
-  { value: 4, suffix: '', label: 'Normas Cumplidas' },
-  { value: 80, suffix: ' Kg', label: 'Máquina Portátil' },
+  { value: 100, suffix: '%', label: 'Normativas locales e internacionales cumplidas' },
+  { value: 80, suffix: ' Kg', label: 'Peso de la áquina' },
 ];
 
 const StatCounter = ({

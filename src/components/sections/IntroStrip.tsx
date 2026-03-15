@@ -111,7 +111,7 @@ const IntroStrip = () => {
             style={{ marginTop: isMobile ? '0px' : '-340px' }}
           >
             <h3 className="font-heading font-bold text-dark text-[24px] mb-6">
-              ¡Cotiza Sin Compromiso!
+              ¡Cotiza Con Nosotros!
             </h3>
 
             {submitted ? (
