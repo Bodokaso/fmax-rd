@@ -37,7 +37,6 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <span className="text-4xl">{service.icon}</span>
               <h3 className="font-heading font-bold text-dark text-xl">{service.title}</h3>
               <div className="w-full h-px bg-gray-100" />
               <p className="text-body-text font-body text-base">{service.description}</p>

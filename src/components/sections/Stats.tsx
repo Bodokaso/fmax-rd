@@ -4,7 +4,6 @@ import { useCountUp } from '../../hooks/useCountUp';
 
 const stats = [
   { value: 10, suffix: '%', label: 'Ahorro en Acero' },
-  { value: 4, suffix: '', label: 'Normas Cumplidas' },
   { value: 100, suffix: '%', label: 'Normativas locales e internacionales cumplidas' },
 ];
 
