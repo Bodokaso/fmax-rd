@@ -22,7 +22,6 @@ const Services = () => {
             Soluciones certificadas para todo tipo de elemento estructural.
           </p>
 
-          <button className="btn-primary">Ver Servicios</button>
         </div>
 
         {/* Cards */}
@@ -40,7 +39,14 @@ const Services = () => {
               <div className="w-full h-px bg-gray-100" />
               <p className="text-body-text font-body text-base">{service.description}</p>
               <div className="mt-auto">
-                <div className="flex items-center gap-2 bg-dark text-white px-[27px] py-[20px] font-heading font-semibold text-[18px] hover:brightness-110 transition cursor-pointer mt-4">
+                <div
+                  className="flex items-center gap-2 bg-dark text-white px-[27px] py-[20px] font-heading font-semibold text-[18px] hover:brightness-110 transition cursor-pointer mt-4"
+                  onClick={() => {
+                  const el = document.getElementById('contacto');
+                  if (!el) return;
+                  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 144, behavior: 'smooth' });
+                }}
+                >
                   Saber Más →
                 </div>
               </div>

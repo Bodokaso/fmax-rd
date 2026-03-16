@@ -51,9 +51,6 @@ const About = () => {
             ))}
           </div>
 
-          <div className="flex items-center mt-[21px]">
-            <button className="btn-dark">Ver Más</button>
-          </div>
         </motion.div>
       </div>
     </section>

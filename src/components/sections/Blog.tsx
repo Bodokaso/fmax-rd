@@ -15,9 +15,6 @@ const Blog = () => {
               Últimas Tendencias en Construcción Estructural
             </h2>
           </div>
-          <button className="btn-primary shrink-0 self-start md:self-auto">
-            Ver Todos los Artículos
-          </button>
         </div>
 
         {/* Cards grid */}

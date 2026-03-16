@@ -17,7 +17,11 @@ const socials = [
 ];
 
 const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const el = document.getElementById(id);
+  if (!el) return;
+  const offset = 144;
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const Navbar = () => {

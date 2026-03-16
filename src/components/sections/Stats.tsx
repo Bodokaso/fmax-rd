@@ -1,5 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import { useCountUp } from '../../hooks/useCountUp';
+import { FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const stats = [
   { value: 10, suffix: '%', label: 'Ahorro en Acero' },
@@ -64,17 +65,17 @@ const Stats = () => {
         </div>
 
         {/* CTA Grid */}
-        <div className="bg-white grid grid-cols-1 md:grid-cols-2 items-center md:pr-[40px]">
+        <div id="contacto" className="bg-white grid grid-cols-1 md:grid-cols-2 items-center md:pr-[40px]">
           {/* COL 1 — image + phone overlay */}
           <div className="relative w-full min-h-[280px] md:min-h-[525px]">
             <img src="/images/stats-cta.jpeg" alt="F MAX RD equipo" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute bottom-0 left-0 flex items-center gap-[13px] p-[13px] md:p-[20px] bg-secondary w-full md:w-[320px] min-h-[80px] md:h-[100px] z-10">
               <div className="w-[60px] h-[60px] rounded-full bg-primary flex items-center justify-center shrink-0">
-                <span className="text-dark text-xl">📞</span>
+                <FaPhone className="text-dark text-lg" />
               </div>
               <div>
                 <h3 className="text-white font-heading font-bold text-base">Teléfono</h3>
-                <a href="tel:+18294707193" className="text-white hover:text-primary">
+                <a href="tel:+18294707193" className="text-white hover:text-primary transition font-body">
                   (829) 470-7193
                 </a>
               </div>
@@ -92,16 +93,19 @@ const Stats = () => {
             </h2>
 
             <p className="text-body-text text-[16px] md:text-[20px] font-body">
-              Llevamos nuestra máquina directamente a tu obra. Cotiza sin compromiso para
-              columnas, muros, puentes o cimentaciones.
+              Llevamos nuestra máquina directamente a tu obra. Cotiza con nosotros para
+              columnas, muros, puentes, cimentaciones, hormigón celular o alquiler de planta eléctrica.
             </p>
 
-            <button
-              className="btn-primary mt-2"
-              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+            <a
+              href="https://wa.me/18294707193?text=Hola%20F%20MAX%20RD%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-2 inline-flex items-center gap-[13px]"
             >
+              <FaWhatsapp className="text-green-500 text-xl" />
               Solicitar Cotización
-            </button>
+            </a>
           </div>
         </div>
       </div>

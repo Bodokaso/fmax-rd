@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
-      <main className="pt-[144px]">
+      <main className="pt-[141px]">
         <Hero />
         <IntroStrip />
         <About />

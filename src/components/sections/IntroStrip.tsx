@@ -53,9 +53,6 @@ const IntroStrip = () => {
         <div className="hidden md:flex flex-row items-center gap-[20px] flex-1">
           {/* Point 1 */}
           <div className="flex items-start gap-4">
-            <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              ●
-            </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
                 ¡Dile Adiós al Traslapo!
@@ -72,9 +69,6 @@ const IntroStrip = () => {
 
           {/* Point 2 */}
           <div className="flex items-start gap-4">
-            <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              ●
-            </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
                 Aplicación Rápida

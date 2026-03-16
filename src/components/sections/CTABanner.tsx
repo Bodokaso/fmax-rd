@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import { FaEnvelope } from 'react-icons/fa';
 
 const CTABanner = () => {
   return (
-    <section id="contacto" className="bg-[#1756B5] py-[89px]">
+    <section className="bg-[#1756B5] py-[89px]">
       <div className="container-std">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +43,8 @@ const CTABanner = () => {
               Empalmes mecánicos certificados para obras civiles. Eficientes, seguros y
               compatibles con normativas vigentes.
             </p>
-            <a href="mailto:fmaxrd@gmail.com" className="btn-primary shrink-0 self-start md:self-auto">
+            <a href="mailto:fmaxrd@gmail.com" className="btn-primary shrink-0 self-start md:self-auto inline-flex items-center gap-[13px]">
+              <FaEnvelope className="text-xl" />
               Escríbenos
             </a>
           </div>

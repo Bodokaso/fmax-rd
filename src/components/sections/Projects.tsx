@@ -21,7 +21,6 @@ const Projects = () => {
               Empalmes aplicados en obras civiles reales. Resultados verificables y
               certificados.
             </p>
-            <button className="btn-primary">Ver Todos los Proyectos</button>
           </div>
         </div>
 

@@ -86,13 +86,6 @@ const Pricing = () => {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-4">
-                  {plan.featured ? (
-                    <button className="btn-primary w-full justify-center">Comenzar</button>
-                  ) : (
-                    <button className="btn-dark w-full justify-center">Comenzar</button>
-                  )}
-                </div>
               </div>
             </div>
           ))}
