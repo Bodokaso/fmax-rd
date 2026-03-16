@@ -18,7 +18,6 @@ const Pricing = () => {
         {/* Title area */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 text-secondary text-[18px] mb-3">
-            <span>⚡</span>
             <span>PLANES DE SERVICIO</span>
           </div>
           <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark">

@@ -84,7 +84,6 @@ const Stats = () => {
           {/* COL 2 — CTA text */}
           <div className="flex flex-col justify-center gap-[13px] md:gap-[21px] p-[34px] md:py-10 md:pl-0">
             <div className="flex items-center gap-2 text-secondary text-[18px]">
-              <span>⚡</span>
               <span>CONTÁCTANOS</span>
             </div>
 

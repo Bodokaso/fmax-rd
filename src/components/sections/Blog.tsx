@@ -9,7 +9,6 @@ const Blog = () => {
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-[50px]">
           <div className="max-w-full md:max-w-[60%]">
             <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
-              <span>⚡</span>
               <span>BLOG</span>
             </div>
             <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">

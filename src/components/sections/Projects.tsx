@@ -9,7 +9,6 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-[34px] mb-[55px]">
           <div>
             <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
-              <span>⚡</span>
               <span>PROYECTOS</span>
             </div>
             <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-[48px]">

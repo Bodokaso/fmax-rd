@@ -1,9 +1,10 @@
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 const socials = [
-  { label: 'FB', href: '#' },
-  { label: 'X', href: '#' },
-  { label: 'IG', href: '#' },
-  { label: 'IN', href: '#' },
+  { icon: <FaFacebookF />, href: "#", hover: "hover:bg-[#1877F2]" },
+  { icon: <FaXTwitter />, href: "#", hover: "hover:bg-black" },
+  { icon: <FaInstagram />, href: "#", hover: "hover:bg-[#E4405F]" },
+  { icon: <FaLinkedinIn />, href: "#", hover: "hover:bg-[#0A66C2]" },
 ];
 
 const pageLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Precios', 'Contacto'];
@@ -58,15 +59,15 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-[21px] px-10 pb-10">
-              {socials.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="w-8 h-8 bg-dark flex items-center justify-center text-white text-xs hover:bg-primary hover:text-dark transition"
-                >
-                  {label}
-                </a>
-              ))}
+              {socials.map(({ icon, href, hover }, index) => (
+              <a
+                key={index}
+                href={href}
+                className={`w-8 h-8 bg-dark text-white flex items-center justify-center transition ${hover}`}
+              >
+                {icon}
+              </a>
+            ))}
             </div>
           </div>
 

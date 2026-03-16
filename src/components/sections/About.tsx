@@ -23,7 +23,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-[10px] text-secondary text-[18px]">
-            <span className="text-secondary">⚡</span>
+            
             <span>SOBRE NOSOTROS</span>
           </div>
 
@@ -44,8 +44,8 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[13px] my-[21px]">
             {features.map((feat) => (
-              <div key={feat} className="flex items-start gap-2">
-                <span className="text-primary">⚡</span>
+              <div key={feat} className="flex items-center gap-2">
+                <span className="text-primary">●</span>
                 <span className="font-body text-dark font-medium text-base">{feat}</span>
               </div>
             ))}
