@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useCountUp } from '../../hooks/useCountUp';
 import { FaWhatsapp, FaPhone } from 'react-icons/fa';
@@ -10,6 +11,7 @@ const stats = [
 
 const Stats = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const [ctaCooldown, setCtaCooldown] = useState(false);
 
   return (
     <section className="relative pt-[89px] md:pt-[120px] pb-0">
@@ -79,13 +81,19 @@ const Stats = () => {
             </p>
 
             <a
-              href="https://wa.me/18294707193?text=Hola%20F%20MAX%20RD%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n."
+              href={ctaCooldown ? undefined : "https://wa.me/18294707193?text=Hola%20F%20MAX%20RD%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n."}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-2 inline-flex items-center gap-[13px]"
+              onClick={() => {
+                if (!ctaCooldown) {
+                  setCtaCooldown(true);
+                  setTimeout(() => setCtaCooldown(false), 30000);
+                }
+              }}
+              className={`btn-primary mt-2 inline-flex items-center gap-[13px] ${ctaCooldown ? 'opacity-70 cursor-not-allowed pointer-events-none' : ''}`}
             >
               <FaWhatsapp className="text-green-500 text-xl" />
-              Solicitar Cotización
+              {ctaCooldown ? 'Enviado ✓' : 'Solicitar Cotización'}
             </a>
           </div>
         </div>

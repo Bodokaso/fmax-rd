@@ -10,6 +10,7 @@ const errorClass = 'text-red-700 text-xs mt-1 mb-3 block';
 const IntroStrip = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -44,6 +45,9 @@ const IntroStrip = () => {
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 800);
+
+    setCooldown(true);
+    setTimeout(() => setCooldown(false), 30000);
   };
 
   return (
@@ -162,13 +166,15 @@ const IntroStrip = () => {
 
                 <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || cooldown}
                 className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 flex items-center justify-center gap-2 ${
-                  loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
+                  loading || cooldown ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
                 }`}
               >
                 {loading ? (
                   'Enviando...'
+                ) : cooldown ? (
+                  'Mensaje enviado ✓'
                 ) : (
                   <>
                     <FaWhatsapp className="text-green-400 text-xl" />

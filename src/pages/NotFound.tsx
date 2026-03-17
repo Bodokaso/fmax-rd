@@ -4,9 +4,9 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#101418] flex flex-col items-center justify-center gap-[21px] text-center px-[34px]">
       <img
-        src="/images/logo-bw.jpeg"
+        src="/images/logo-bw.webp"
         alt="F MAX RD"
-        className="h-[60px] w-auto object-contain mb-[21px] border-2 border-dark p-1"
+        className="h-[73px] w-auto object-contain mb-[21px] border-2 border-dark p-1"
       />
       <h1 className="font-heading font-bold text-white text-[84px] leading-none">
         404

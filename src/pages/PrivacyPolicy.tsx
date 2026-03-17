@@ -13,9 +13,9 @@ export default function PrivacyPolicy() {
       <div className="bg-[#101418] py-[55px]">
         <div className="container-std">
           <img
-            src="/images/logo-bw.jpeg"
+            src="/images/logo-bw.webp"
             alt="F MAX RD"
-            className="h-[50px] w-auto object-contain mb-[34px] cursor-pointer"
+            className="h-[73px] w-auto object-contain mb-[34px] cursor-pointer"
             onClick={() => window.location.href = '/'}
           />
           <h1 className="font-heading font-bold text-white text-[40px] md:text-[52px]">
