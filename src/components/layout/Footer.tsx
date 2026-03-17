@@ -109,6 +109,12 @@ const Footer = () => {
           </div>
         </div>
 
+        <div className="text-center pt-[21px]">
+          <a href="/privacidad" className="text-white/40 hover:text-white/70 transition text-sm font-body">
+            Política de Privacidad
+          </a>
+        </div>
+
         {/* Copyright bar */}
         <div className="text-center pt-[40px] border-t border-white/10">
           <p className="text-white text-[20px] font-body">
