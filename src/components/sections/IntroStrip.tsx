@@ -58,8 +58,7 @@ const IntroStrip = () => {
                 ¡Dile Adiós al Traslapo!
               </h2>
               <p className="text-body-text text-base mt-1">
-                Los conectores mecánicos eliminan el traslape tradicional y te ahorran hasta
-                un 10% del acero.
+                Los conectores mecánicos eliminan el traslape tradicional y te ahorran de 10% al 15% del acero.
               </p>
             </div>
           </div>

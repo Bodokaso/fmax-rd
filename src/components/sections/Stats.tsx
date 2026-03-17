@@ -7,30 +7,6 @@ const stats = [
   { value: 100, suffix: '%', label: 'Normativas locales e internacionales cumplidas' },
 ];
 
-const StatCounter = ({
-  value,
-  suffix,
-  label,
-  isActive,
-}: {
-  value: number;
-  suffix: string;
-  label: string;
-  isActive: boolean;
-}) => {
-  const count = useCountUp(value, 2000, isActive);
-  return (
-    <div className="flex flex-col items-center text-center">
-      <div className="flex items-end gap-1 mb-2">
-        <span className="font-heading text-[40px] md:text-[60px] font-bold text-white leading-none">
-          {count}
-          {suffix}
-        </span>
-      </div>
-      <p className="text-white/70 font-body text-base">{label}</p>
-    </div>
-  );
-};
 
 const Stats = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -47,23 +23,25 @@ const Stats = () => {
         {/* Stats bar */}
         <div
           ref={ref}
-          className="flex justify-center items-center gap-[89px] w-full mb-[34px] md:mb-[55px] py-[20px]"
+          className="relative flex items-center w-full mb-[34px] md:mb-[55px] py-[20px]"
         >
-          <div className="flex flex-col items-center text-center">
+          <div className="flex-1 flex flex-col items-center text-center pr-[21px] md:pr-[55px]">
             <div className="flex items-end gap-1 mb-2">
-              <span className="font-heading font-bold text-white leading-none" style={{ fontSize: '60px' }}>
+              <span className="font-heading font-bold text-white leading-none text-[36px] md:text-[60px]">
                 10%-15%
               </span>
             </div>
-            <p className="text-white/70 font-body text-base">{stats[0].label}</p>
+            <p className="text-white/70 font-body text-sm md:text-base mt-2 max-w-[120px] md:max-w-none text-center">{stats[0].label}</p>
           </div>
           <div className="w-px h-[60px] bg-white/20 shrink-0" />
-          <StatCounter
-            value={stats[1].value}
-            suffix={stats[1].suffix}
-            label={stats[1].label}
-            isActive={inView}
-          />
+          <div className="flex-1 flex flex-col items-center text-center pl-[21px] md:pl-[55px]">
+            <div className="flex items-end gap-1 mb-2">
+              <span className="font-heading font-bold text-white leading-none text-[36px] md:text-[60px]">
+                {useCountUp(stats[1].value, 2000, inView)}{stats[1].suffix}
+              </span>
+            </div>
+            <p className="text-white/70 font-body text-sm md:text-base mt-2 max-w-[120px] md:max-w-none text-center">{stats[1].label}</p>
+          </div>
         </div>
 
         {/* CTA Grid */}

@@ -42,7 +42,7 @@ const Projects = () => {
               />
               <div className="bg-secondary text-white p-4">
                 <p className="text-sm opacity-80 mb-1">
-                  {project.date ? `${project.date} — ${project.location}` : `— ${project.location}`}
+                  {project.date ? `${project.date} — ${project.location}` : project.location}
                 </p>
                 <div className="w-8 h-px bg-white/30 my-2" />
                 <h3 className="font-heading font-semibold text-lg">{project.title}</h3>
