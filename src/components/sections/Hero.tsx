@@ -37,7 +37,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Los conectores mecánicos te ahorrarán hasta un 10% del acero.
+            Los conectores mecánicos te ahorrarán de un 10% hasta un 15% del acero.
             Unión directa de barras sin modificar el acero de refuerzo.
             Solución eficiente, segura y compatible con normativas vigentes.
           </motion.p>

@@ -15,12 +15,12 @@ const steps = [
   {
     num: '03',
     title: 'Extrusión Mecánica',
-    text: 'La máquina FP65 (220V, 3KW) aplica presión controlada sobre las marcas blancas del conector.',
+    text: 'La máquina (220V, 3KW) aplica presión controlada sobre las marcas blancas del conector.',
   },
   {
     num: '04',
     title: 'Control de Calidad',
-    text: 'Se verifica la deformación con calibrador (pie de rey) según los rangos de la TABLA 1.',
+    text: 'Se verifica la deformación con calibrador (pie de rey) según parámetros de la normativa.',
   },
 ];
 
@@ -51,31 +51,6 @@ const Process = () => {
             Ver Video
           </button>
 
-          <div className="mt-[21px] overflow-x-auto w-full">
-            <p className="font-heading font-bold text-dark text-base mb-3">
-              Especificaciones Técnicas — Máquina FP65
-            </p>
-            <table className="w-full border-collapse text-xs md:text-sm font-body">
-              <thead>
-                <tr className="bg-dark text-white">
-                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Referencia</th>
-                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Rango MPa</th>
-                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Voltage</th>
-                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Frecuencia</th>
-                  <th className="px-2 py-2 md:px-4 md:py-3 text-left font-semibold">Potencia</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border border-gray-200">
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-dark font-semibold">FP65</td>
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">0–65</td>
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">220V</td>
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">60Hz</td>
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-body-text">3KW</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
         {/* COL 2 — steps */}

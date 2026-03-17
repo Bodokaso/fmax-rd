@@ -31,15 +31,21 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top bar */}
       <div className="h-[55px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
-        <div className="flex gap-[34px]">
-          <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
-            (829) 470-7193
-          </a>
-          <a href="mailto:fmaxrd@gmail.com" className="hidden md:block text-sm text-body-text hover:text-primary transition">
-            fmaxrd@gmail.com
+        <div className="flex gap-[17px] items-center">
+          <div className="flex gap-[8px] items-center">
+            <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
+              (829) 470-7193
+            </a>
+            <span className="text-body-text text-sm">/</span>
+            <a href="tel:+18292594180" className="text-sm text-body-text hover:text-primary transition">
+              (829) 259-4180
+            </a>
+          </div>
+          <a href="mailto:info@fmaxrd.com" className="hidden md:block text-sm text-body-text hover:text-primary transition">
+            info@fmaxrd.com
           </a>
         </div>
-        <div className="flex gap-3">
+        <div className="hidden">
           {socials.map(({ icon, href, hover }, index) => (
             <a
               key={index}
@@ -57,7 +63,7 @@ const Navbar = () => {
         <img
           src="/images/logo-bw.jpeg"
           alt="F MAX RD"
-          className="h-[52px] w-auto object-contain"
+          className="h-full w-auto object-contain py-[8px]"
         />
 
         <nav className="hidden md:flex gap-[34px]">

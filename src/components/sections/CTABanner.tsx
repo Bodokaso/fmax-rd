@@ -18,11 +18,11 @@ const CTABanner = () => {
                 ¿Listo para trabajar con nosotros?
               </p>
               <a
-                href="mailto:fmaxrd@gmail.com"
+                href="mailto:info@fmaxrd.com"
                 className="text-white font-body block hover:text-primary transition"
                 style={{ fontSize: '34px', fontWeight: 500 }}
               >
-                fmaxrd@gmail.com
+                info@fmaxrd.com
               </a>
             </div>
 
@@ -43,7 +43,7 @@ const CTABanner = () => {
               Empalmes mecánicos certificados para obras civiles. Eficientes, seguros y
               compatibles con normativas vigentes.
             </p>
-            <a href="mailto:fmaxrd@gmail.com" className="btn-primary shrink-0 self-start md:self-auto inline-flex items-center gap-[13px]">
+            <a href="mailto:info@fmaxrd.com" className="btn-primary shrink-0 self-start md:self-auto inline-flex items-center gap-[13px]">
               <FaEnvelope className="text-xl" />
               Escríbenos
             </a>

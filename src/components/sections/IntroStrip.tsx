@@ -74,7 +74,7 @@ const IntroStrip = () => {
                 Aplicación Rápida
               </h2>
               <p className="text-body-text text-base mt-1">
-                Instalación eficiente en obra con nuestra máquina portátil de 80 kg.
+                Instalación eficiente en obra.
               </p>
             </div>
           </div>

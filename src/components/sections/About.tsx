@@ -24,7 +24,7 @@ const About = () => {
         >
           <div className="flex items-center gap-[10px] text-secondary text-[18px]">
             
-            <span>SOBRE NOSOTROS</span>
+            <span>NUESTRO SERVICIO</span>
           </div>
 
           <h2 className="font-heading text-[28px] md:text-[52px] font-bold text-dark mt-[13px]">

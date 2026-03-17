@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const socials = [
   { icon: <FaFacebookF />, href: "#", hover: "hover:bg-[#1877F2]" },
@@ -7,11 +8,17 @@ const socials = [
   { icon: <FaLinkedinIn />, href: "#", hover: "hover:bg-[#0A66C2]" },
 ];
 
-const pageLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Precios', 'Contacto'];
 const appLinks = ['Columnas', 'Muros Estructurales', 'Losas en Puentes', 'Puentes', 'Pilotes', 'Túneles', 'Cimentaciones'];
-const utilLinks = ['Guía de Estilos', 'Licencias', 'Changelog', 'Contacto'];
 
 const Footer = () => {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offset = 50;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-[#101418] pt-[144px] pb-[55px]">
       <div className="container-std">
@@ -29,26 +36,31 @@ const Footer = () => {
 
             <div className="flex flex-col gap-[21px] px-10 pb-8">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm">
-                  📞
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                  <FaPhone className="text-primary text-sm" />
                 </div>
-                <a href="tel:+18294707193" className="text-white hover:text-primary transition text-base">
-                  (829) 470-7193 / (829) 259-4180
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+18294707193" className="text-white hover:text-primary transition text-base">
+                    (829) 470-7193
+                  </a>
+                  <a href="tel:+18292594180" className="text-white hover:text-primary transition text-base">
+                    (829) 259-4180
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm">
-                  ✉️
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                  <FaEnvelope className="text-primary text-sm" />
                 </div>
-                <a href="mailto:fmaxrd@gmail.com" className="text-white hover:text-primary transition text-base">
-                  fmaxrd@gmail.com
+                <a href="mailto:info@fmaxrd.com" className="text-white hover:text-primary transition text-base">
+                  info@fmaxrd.com
                 </a>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm">
-                  📍
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                  <FaMapMarkerAlt className="text-primary text-sm" />
                 </div>
                 <p className="text-white text-base">
                   Calle Max Henríquez Ureña No. 84,
@@ -58,7 +70,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex gap-[21px] px-10 pb-10">
+            <div className="hidden">
               {socials.map(({ icon, href, hover }, index) => (
               <a
                 key={index}
@@ -77,11 +89,11 @@ const Footer = () => {
               <div className="min-w-[140px]">
                 <h3 className="font-heading font-bold text-white mb-4 text-base">Páginas</h3>
                 <div className="flex flex-col gap-2">
-                  {pageLinks.map((link) => (
-                    <a key={link} href="#" className="text-white/70 hover:text-primary transition text-sm block">
-                      {link}
-                    </a>
-                  ))}
+                  <span onClick={() => scrollTo('inicio')} className="text-white/70 hover:text-primary transition text-sm block cursor-pointer">Inicio</span>
+                  <span onClick={() => scrollTo('nosotros')} className="text-white/70 hover:text-primary transition text-sm block cursor-pointer">Nosotros</span>
+                  <span onClick={() => scrollTo('servicios')} className="text-white/70 hover:text-primary transition text-sm block cursor-pointer">Servicios</span>
+                  <span onClick={() => scrollTo('proyectos')} className="text-white/70 hover:text-primary transition text-sm block cursor-pointer">Proyectos</span>
+                  <span onClick={() => scrollTo('contacto')} className="text-white/70 hover:text-primary transition text-sm block cursor-pointer">Contacto</span>
                 </div>
               </div>
 
@@ -89,20 +101,7 @@ const Footer = () => {
                 <h3 className="font-heading font-bold text-white mb-4 text-base">Aplicaciones</h3>
                 <div className="flex flex-col gap-2">
                   {appLinks.map((link) => (
-                    <a key={link} href="#" className="text-white/70 hover:text-primary transition text-sm block">
-                      {link}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="min-w-[140px]">
-                <h3 className="font-heading font-bold text-white mb-4 text-base">Utilidades</h3>
-                <div className="flex flex-col gap-2">
-                  {utilLinks.map((link) => (
-                    <a key={link} href="#" className="text-white/70 hover:text-primary transition text-sm block">
-                      {link}
-                    </a>
+                    <span key={link} className="text-white/70 text-sm block">{link}</span>
                   ))}
                 </div>
               </div>

@@ -49,12 +49,14 @@ const Stats = () => {
           ref={ref}
           className="flex justify-center items-center gap-[89px] w-full mb-[34px] md:mb-[55px] py-[20px]"
         >
-          <StatCounter
-            value={stats[0].value}
-            suffix={stats[0].suffix}
-            label={stats[0].label}
-            isActive={inView}
-          />
+          <div className="flex flex-col items-center text-center">
+            <div className="flex items-end gap-1 mb-2">
+              <span className="font-heading font-bold text-white leading-none" style={{ fontSize: '60px' }}>
+                10%-15%
+              </span>
+            </div>
+            <p className="text-white/70 font-body text-base">{stats[0].label}</p>
+          </div>
           <div className="w-px h-[60px] bg-white/20 shrink-0" />
           <StatCounter
             value={stats[1].value}
@@ -74,22 +76,23 @@ const Stats = () => {
                 <FaPhone className="text-dark text-lg" />
               </div>
               <div>
-                <h3 className="text-white font-heading font-bold text-base">Teléfono</h3>
-                <a href="tel:+18294707193" className="text-white hover:text-primary transition font-body">
-                  (829) 470-7193
-                </a>
+                <h3 className="text-white font-heading font-bold text-base">Teléfonos</h3>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+18294707193" className="text-white hover:text-primary transition font-body text-sm">
+                    (829) 470-7193
+                  </a>
+                  <a href="tel:+18292594180" className="text-white hover:text-primary transition font-body text-sm">
+                    (829) 259-4180
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           {/* COL 2 — CTA text */}
-          <div className="flex flex-col justify-center gap-[13px] md:gap-[21px] p-[34px] md:py-10 md:pl-0">
-            <div className="flex items-center gap-2 text-secondary text-[18px]">
-              <span>CONTÁCTANOS</span>
-            </div>
-
+          <div className="flex flex-col justify-center gap-[13px] md:gap-[21px] p-[34px] md:py-10 md:pl-[55px]">
             <h2 className="font-heading text-[28px] md:text-[40px] font-bold text-dark leading-tight">
-              ¡Llámanos o Escríbenos Para Comenzar!
+              Llámanos o Escríbenos!
             </h2>
 
             <p className="text-body-text text-[16px] md:text-[20px] font-body">
