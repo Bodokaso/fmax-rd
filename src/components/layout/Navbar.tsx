@@ -61,7 +61,7 @@ const Navbar = () => {
       {/* Main nav */}
       <div className="h-[89px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
         <img
-          src="/images/logo-bw.jpeg"
+          src="/images/logo-bw.webp"
           alt="F MAX RD"
           className="h-full w-auto object-contain py-[8px]"
         />

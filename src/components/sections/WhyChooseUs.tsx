@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
           {/* Position 2 — top right: first image */}
           <div className="overflow-hidden rounded-sm">
             <img
-              src="/images/why-choose-1.jpg"
+              src="/images/why-choose-1.webp"
               alt="F MAX RD en obra"
               className="w-full h-full object-cover hover:scale-105 transition duration-500"
             />
@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
           {/* Position 3 — bottom left: second image */}
           <div className="overflow-hidden rounded-sm">
             <img
-              src="/images/why-choose-2.jpg"
+              src="/images/why-choose-2.webp"
               alt="F MAX RD empalme"
               className="w-full h-full object-cover hover:scale-105 transition duration-500"
             />

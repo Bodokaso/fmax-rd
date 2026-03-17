@@ -32,7 +32,7 @@ const Process = () => {
       <div className="container-std grid grid-cols-1 gap-[34px] md:[grid-template-columns:minmax(0,1fr)_minmax(0,1.618fr)] md:gap-[55px]">
         {/* COL 1 */}
         <div>
-          <img src="/images/process.jpeg" alt="Proceso de instalación F MAX RD" className="w-full h-[220px] md:h-[300px] object-cover mb-[21px]" />
+          <img src="/images/process.webp" alt="Proceso de instalación F MAX RD" className="w-full h-[220px] md:h-[300px] object-cover mb-[21px]" />
 
           <div className="flex items-center gap-2 text-secondary text-[18px] mb-3">
             <span>PROCESO DE APLICACIÓN</span>

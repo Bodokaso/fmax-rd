@@ -70,7 +70,7 @@ const Stats = () => {
         <div id="contacto" className="bg-white grid grid-cols-1 md:grid-cols-2 items-center md:pr-[40px]">
           {/* COL 1 — image + phone overlay */}
           <div className="relative w-full min-h-[280px] md:min-h-[525px]">
-            <img src="/images/stats-cta.jpeg" alt="F MAX RD equipo" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="/images/stats-cta.webp" alt="F MAX RD equipo" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute bottom-0 left-0 flex items-center gap-[13px] p-[13px] md:p-[20px] bg-secondary w-full md:w-[320px] min-h-[80px] md:h-[100px] z-10">
               <div className="w-[60px] h-[60px] rounded-full bg-primary flex items-center justify-center shrink-0">
                 <FaPhone className="text-dark text-lg" />
