@@ -63,6 +63,8 @@ const Navbar = () => {
         <img
           src="/images/logo-bw.webp"
           alt="F MAX RD"
+          width={305}
+          height={144}
           className="h-full w-auto object-contain py-[8px]"
         />
 

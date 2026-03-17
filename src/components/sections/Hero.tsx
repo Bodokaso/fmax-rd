@@ -9,7 +9,7 @@ const Hero = () => {
     <section id="inicio" className="relative min-h-[610px] md:min-h-[700px] pt-[89px] pb-[144px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-full h-full">
-        <img src="/images/hero-bg.webp" alt="F MAX RD construcción" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/hero-bg.webp" alt="F MAX RD construcción" fetchPriority="high" loading="eager" className="absolute inset-0 w-full h-full object-cover" />
         <div
           className="absolute inset-0"
           style={{

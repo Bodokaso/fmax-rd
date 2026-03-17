@@ -36,7 +36,7 @@ const Projects = () => {
               viewport={{ once: true }}
             >
               <img
-                src={`/images/project-${project.id}.jpeg`}
+                src={project.image}
                 alt={project.title}
                 className="w-full h-[280px] object-cover group-hover:brightness-110 transition duration-300"
               />

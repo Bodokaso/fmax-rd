@@ -86,9 +86,9 @@ const IntroStrip = () => {
             className="relative z-20 bg-[rgba(245,197,24,0.92)] p-[50px_35px_40px_35px] w-full md:w-[426px] shadow-2xl"
             style={{ marginTop: isMobile ? '0px' : '-340px' }}
           >
-            <h3 className="font-heading font-bold text-dark text-[24px] mb-6">
+            <h2 className="font-heading font-bold text-dark text-[24px] mb-6">
               ¡Cotiza Con Nosotros!
-            </h3>
+            </h2>
 
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full gap-4 py-10">
@@ -108,11 +108,13 @@ const IntroStrip = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="text-dark font-semibold text-sm mb-1 block">
+                <label htmlFor="fullName" className="text-dark font-semibold text-sm mb-1 block">
                   Nombre Completo
                 </label>
                 <input
+                  id="fullName"
                   type="text"
+                  aria-label="Nombre Completo"
                   className={inputClass}
                   {...register('fullName', { required: 'Requerido', minLength: 2 })}
                 />
@@ -120,9 +122,11 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.fullName.message}</span>
                 )}
 
-                <label className="text-dark font-semibold text-sm mb-1 block">Teléfono</label>
+                <label htmlFor="phone" className="text-dark font-semibold text-sm mb-1 block">Teléfono</label>
                 <input
+                  id="phone"
                   type="tel"
+                  aria-label="Teléfono"
                   className={inputClass}
                   {...register('phone', { required: 'Requerido' })}
                 />
@@ -130,10 +134,12 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.phone.message}</span>
                 )}
 
-                <label className="text-dark font-semibold text-sm mb-1 block">
+                <label htmlFor="projectType" className="text-dark font-semibold text-sm mb-1 block">
                   Tipo de Proyecto
                 </label>
                 <select
+                  id="projectType"
+                  aria-label="Tipo de Proyecto"
                   className={`${inputClass} appearance-none`}
                   {...register('projectType', {
                     required: 'Requerido',
