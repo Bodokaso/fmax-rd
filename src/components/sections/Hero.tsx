@@ -9,7 +9,7 @@ const Hero = () => {
     <section id="inicio" className="relative min-h-[610px] md:min-h-[700px] pt-[89px] pb-[144px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-full h-full">
-        <img src="/images/hero-bg.jpeg" alt="F MAX RD construcción" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/hero-bg.webp" alt="F MAX RD construcción" fetchPriority="high" loading="eager" className="absolute inset-0 w-full h-full object-cover" />
         <div
           className="absolute inset-0"
           style={{
@@ -37,7 +37,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Los conectores mecánicos te ahorrarán hasta un 10% del acero.
+            Los conectores mecánicos te ahorrarán de un 10% hasta un 15% del acero.
             Unión directa de barras sin modificar el acero de refuerzo.
             Solución eficiente, segura y compatible con normativas vigentes.
           </motion.p>

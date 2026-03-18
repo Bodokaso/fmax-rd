@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 const navLinks = [
   { label: 'Inicio', id: 'inicio' },
@@ -9,14 +10,18 @@ const navLinks = [
 ];
 
 const socials = [
-  { label: 'FB', href: '#' },
-  { label: 'X', href: '#' },
-  { label: 'IG', href: '#' },
-  { label: 'IN', href: '#' },
+  { icon: <FaFacebookF />, href: "#", hover: "hover:bg-[#1877F2]" },
+  { icon: <FaXTwitter />, href: "#", hover: "hover:bg-black" },
+  { icon: <FaInstagram />, href: "#", hover: "hover:bg-[#E4405F]" },
+  { icon: <FaLinkedinIn />, href: "#", hover: "hover:bg-[#0A66C2]" },
 ];
 
 const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const el = document.getElementById(id);
+  if (!el) return;
+  const offset = 144;
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const Navbar = () => {
@@ -26,22 +31,28 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top bar */}
       <div className="h-[55px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
-        <div className="flex gap-[34px]">
-          <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
-            (829) 470-7193
-          </a>
-          <a href="mailto:fmaxrd@gmail.com" className="hidden md:block text-sm text-body-text hover:text-primary transition">
-            fmaxrd@gmail.com
+        <div className="flex gap-[17px] items-center">
+          <div className="flex gap-[8px] items-center">
+            <a href="tel:+18294707193" className="text-sm text-body-text hover:text-primary transition">
+              (829) 470-7193
+            </a>
+            <span className="text-body-text text-sm">/</span>
+            <a href="tel:+18292594180" className="text-sm text-body-text hover:text-primary transition">
+              (829) 259-4180
+            </a>
+          </div>
+          <a href="mailto:info@fmaxrd.com" className="hidden md:block text-sm text-body-text hover:text-primary transition">
+            info@fmaxrd.com
           </a>
         </div>
-        <div className="flex gap-3">
-          {socials.map(({ label, href }) => (
+        <div className="hidden">
+          {socials.map(({ icon, href, hover }, index) => (
             <a
-              key={label}
+              key={index}
               href={href}
-              className="w-8 h-8 bg-dark text-white text-xs flex items-center justify-center hover:bg-primary hover:text-dark transition"
+              className={`w-8 h-8 bg-dark text-white flex items-center justify-center transition ${hover}`}
             >
-              {label}
+              {icon}
             </a>
           ))}
         </div>
@@ -50,9 +61,11 @@ const Navbar = () => {
       {/* Main nav */}
       <div className="h-[89px] bg-white border-b border-gray-100 px-[20px] flex justify-between items-center">
         <img
-          src="/images/logo-bw.jpeg"
+          src="/images/logo-bw.webp"
           alt="F MAX RD"
-          className="h-[52px] w-auto object-contain"
+          width={305}
+          height={144}
+          className="h-full w-auto object-contain py-[8px]"
         />
 
         <nav className="hidden md:flex gap-[34px]">

@@ -12,7 +12,7 @@ const About = () => {
     <section id="nosotros" className="py-[89px] md:py-[144px] bg-white">
       <div className="container-std grid grid-cols-1 gap-[34px] md:[grid-template-columns:minmax(0,1fr)_minmax(0,1.618fr)] md:gap-[55px] items-center">
         {/* COL 1 — image */}
-        <img src="/images/about.jpg" alt="Empalme mecánico F MAX RD" className="w-full h-[250px] md:h-[520px] object-cover rounded-sm" />
+        <img src="/images/about.webp" alt="Empalme mecánico F MAX RD" className="w-full h-[250px] md:h-[520px] object-cover rounded-sm" />
 
         {/* COL 2 — content */}
         <motion.div
@@ -23,8 +23,8 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-[10px] text-secondary text-[18px]">
-            <span className="text-secondary">⚡</span>
-            <span>SOBRE NOSOTROS</span>
+            
+            <span>NUESTRO SERVICIO</span>
           </div>
 
           <h2 className="font-heading text-[28px] md:text-[52px] font-bold text-dark mt-[13px]">
@@ -44,25 +44,13 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[13px] my-[21px]">
             {features.map((feat) => (
-              <div key={feat} className="flex items-start gap-2">
-                <span className="text-primary">⚡</span>
+              <div key={feat} className="flex items-center gap-2">
+                <span className="text-primary">●</span>
                 <span className="font-body text-dark font-medium text-base">{feat}</span>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[21px] mt-[21px]">
-            <button className="btn-dark">Ver Más</button>
-            <div className="bg-[#EEF3F6] p-[21px] rounded w-full sm:w-auto">
-              <h3 className="text-[36px] font-bold text-secondary font-heading">550</h3>
-              <div className="flex gap-1 my-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-primary">⭐</span>
-                ))}
-              </div>
-              <p className="text-body-text text-sm">MPa mínimo garantizado</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

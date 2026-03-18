@@ -3,44 +3,56 @@ import type { ServiceItem } from '../types';
 export const services: ServiceItem[] = [
   {
     id: 1,
-    icon: '🏛️',
+    icon: '',
     title: 'Columnas',
     description: 'Empalme ideal para elementos verticales en zonas sísmicas y de alta carga axial.',
   },
   {
     id: 2,
-    icon: '🧱',
+    icon: '',
     title: 'Muros Estructurales',
     description: 'Continuidad estructural real en muros de concreto reforzado y pantallas.',
   },
   {
     id: 3,
-    icon: '🌉',
+    icon: '',
     title: 'Losas en Puentes',
     description: 'Solución certificada CCP-14 para losas de puentes y estructuras viales.',
   },
   {
     id: 4,
-    icon: '🛣️',
+    icon: '',
     title: 'Puentes',
     description: 'Cumple criterio de deslizamiento CCP14 5.11.5.2.2 para uso en puentes.',
   },
   {
     id: 5,
-    icon: '🏗️',
+    icon: '',
     title: 'Pilotes',
     description: 'Continuidad estructural en elementos de fundación profunda.',
   },
   {
     id: 6,
-    icon: '🚇',
+    icon: '',
     title: 'Túneles',
     description: 'Aplicación en espacios confinados donde no hay longitud para solapes tradicionales.',
   },
   {
     id: 7,
-    icon: '⚓',
+    icon: '',
     title: 'Cimentaciones',
     description: 'Unión directa en zapatas, vigas de cimentación y elementos de anclaje.',
+  },
+  {
+    id: 8,
+    icon: '🏠',
+    title: 'Hormigón Celular',
+    description: 'Pregunta por nuestros servicios de hormigón celular.',
+  },
+  {
+    id: 9,
+    icon: '⚡',
+    title: 'Alquiler de Planta Eléctrica',
+    description: 'Pregunta por nuestros servicios de alquiler de plantas eléctricas.',
   },
 ];

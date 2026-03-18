@@ -1,10 +1,7 @@
-// TODO: Replace 'f58d82e8-1af1-4a27-90ed-f60ef4571663' with actual
-// Web3Forms access key from https://web3forms.com
-// Free plan sends up to 250 emails/month
-
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import type { ContactFormData } from '../../types';
+import { FaWhatsapp } from "react-icons/fa";
 
 const inputClass =
   'w-full bg-white border-0 px-4 py-3 mb-1 font-body text-dark text-base focus:outline-none focus:ring-2 focus:ring-dark';
@@ -13,7 +10,7 @@ const errorClass = 'text-red-700 text-xs mt-1 mb-3 block';
 const IntroStrip = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -32,36 +29,25 @@ const IntroStrip = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setLoading(true);
-    setError(false);
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'f58d82e8-1af1-4a27-90ed-f60ef4571663',
-          subject: 'Nueva Consulta — F MAX RD',
-          from_name: 'F MAX RD Website',
-          name: data.fullName,
-          phone: data.phone,
-          project_type: data.projectType,
-          to: 'fmaxrd@gmail.com',
-        }),
-      });
-      const result = await response.json();
-      if (result.success) {
-        setSubmitted(true);
-        reset();
-      } else {
-        setError(true);
-      }
-    } catch {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
+
+    const message =
+      `Hola F MAX RD, me interesa cotizar sus servicios.%0A%0A` +
+      `*Nombre:* ${data.fullName}%0A` +
+      `*Teléfono:* ${data.phone}%0A` +
+      `*Tipo de Proyecto:* ${data.projectType}`;
+
+    const whatsappUrl = `https://wa.me/18294707193?text=${message}`;
+
+    setLoading(false);
+    setSubmitted(true);
+    reset();
+
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 800);
+
+    setCooldown(true);
+    setTimeout(() => setCooldown(false), 30000);
   };
 
   return (
@@ -71,16 +57,12 @@ const IntroStrip = () => {
         <div className="hidden md:flex flex-row items-center gap-[20px] flex-1">
           {/* Point 1 */}
           <div className="flex items-start gap-4">
-            <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              ⚡
-            </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
                 ¡Dile Adiós al Traslapo!
               </h2>
               <p className="text-body-text text-base mt-1">
-                Los conectores mecánicos eliminan el traslape tradicional y te ahorran hasta
-                un 10% del acero.
+                Los conectores mecánicos eliminan el traslape tradicional y te ahorran de 10% al 15% del acero.
               </p>
             </div>
           </div>
@@ -90,15 +72,12 @@ const IntroStrip = () => {
 
           {/* Point 2 */}
           <div className="flex items-start gap-4">
-            <div className="w-[48px] h-[48px] bg-secondary rounded flex items-center justify-center text-white text-xl shrink-0">
-              🔧
-            </div>
             <div>
               <h2 className="font-heading font-semibold text-[24px] text-dark">
                 Aplicación Rápida
               </h2>
               <p className="text-body-text text-base mt-1">
-                Instalación eficiente en obra con nuestra máquina portátil de 80 kg.
+                Instalación eficiente en obra.
               </p>
             </div>
           </div>
@@ -110,9 +89,9 @@ const IntroStrip = () => {
             className="relative z-20 bg-[rgba(245,197,24,0.92)] p-[50px_35px_40px_35px] w-full md:w-[426px] shadow-2xl"
             style={{ marginTop: isMobile ? '0px' : '-340px' }}
           >
-            <h3 className="font-heading font-bold text-dark text-[24px] mb-6">
-              ¡Cotiza Sin Compromiso!
-            </h3>
+            <h2 className="font-heading font-bold text-dark text-[24px] mb-6">
+              ¡Cotiza Con Nosotros!
+            </h2>
 
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full gap-4 py-10">
@@ -121,7 +100,7 @@ const IntroStrip = () => {
                   ¡Mensaje Recibido!
                 </h3>
                 <p className="text-dark text-center">
-                  Nos pondremos en contacto contigo pronto.
+                  Abriendo WhatsApp para conectarte con nosotros...
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); reset(); }}
@@ -132,11 +111,13 @@ const IntroStrip = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="text-dark font-semibold text-sm mb-1 block">
+                <label htmlFor="fullName" className="text-dark font-semibold text-sm mb-1 block">
                   Nombre Completo
                 </label>
                 <input
+                  id="fullName"
                   type="text"
+                  aria-label="Nombre Completo"
                   className={inputClass}
                   {...register('fullName', { required: 'Requerido', minLength: 2 })}
                 />
@@ -144,9 +125,11 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.fullName.message}</span>
                 )}
 
-                <label className="text-dark font-semibold text-sm mb-1 block">Teléfono</label>
+                <label htmlFor="phone" className="text-dark font-semibold text-sm mb-1 block">Teléfono</label>
                 <input
+                  id="phone"
                   type="tel"
+                  aria-label="Teléfono"
                   className={inputClass}
                   {...register('phone', { required: 'Requerido' })}
                 />
@@ -154,10 +137,12 @@ const IntroStrip = () => {
                   <span className={errorClass}>{errors.phone.message}</span>
                 )}
 
-                <label className="text-dark font-semibold text-sm mb-1 block">
+                <label htmlFor="projectType" className="text-dark font-semibold text-sm mb-1 block">
                   Tipo de Proyecto
                 </label>
                 <select
+                  id="projectType"
+                  aria-label="Tipo de Proyecto"
                   className={`${inputClass} appearance-none`}
                   {...register('projectType', {
                     required: 'Requerido',
@@ -180,29 +165,23 @@ const IntroStrip = () => {
                 )}
 
                 <button
-                  type="submit"
-                  disabled={loading}
-                  className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 ${
-                    loading ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
-                  }`}
-                >
-                  {loading ? 'Enviando...' : 'Enviar Consulta'}
-                </button>
-
-                {error && (
-                  <div className="mt-2">
-                    <p className="text-red-700 text-sm mt-2 text-center">
-                      Hubo un error al enviar. Por favor llámanos directamente al (829) 470-7193
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => setError(false)}
-                      className="text-dark underline text-xs mt-1 block text-center w-full"
-                    >
-                      Intentar de nuevo
-                    </button>
-                  </div>
+                type="submit"
+                disabled={loading || cooldown}
+                className={`w-full bg-dark text-white font-heading font-semibold py-[20px] text-[18px] transition mt-4 flex items-center justify-center gap-2 ${
+                  loading || cooldown ? 'opacity-70 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
+                }`}
+              >
+                {loading ? (
+                  'Enviando...'
+                ) : cooldown ? (
+                  'Mensaje enviado ✓'
+                ) : (
+                  <>
+                    <FaWhatsapp className="text-green-400 text-xl" />
+                    Enviar Consulta
+                  </>
                 )}
+              </button>
               </form>
             )}
           </div>

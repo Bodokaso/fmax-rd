@@ -7,11 +7,11 @@ const cards = [
   },
   {
     title: 'ACI318 y ACI439',
-    text: 'Pruebas de tracción según ACI 439. Resultado mínimo de 550 MPa por muestra ensayada.',
+    text: 'Pruebas de tracción según ACI 439. Resultado garantizado por muestra ensayada.',
   },
   {
-    title: '550 MPa Garantizados',
-    text: 'Cada empalme tipo 2 supera el esfuerzo mínimo requerido por normativa.',
+    title: 'Servicio Integral',
+    text: 'Llevamos la máquina al sitio, instalamos y verificamos. Todo en una sola visita.',
   },
   {
     title: 'Servicio en Obra',
@@ -40,7 +40,6 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-2 text-primary text-[18px]">
-            <span>⚡</span>
             <span>¿POR QUÉ F MAX RD?</span>
           </div>
 
@@ -58,9 +57,13 @@ const WhyChooseUs = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className="text-primary text-2xl">⚡</span>
                 <h3 className="font-heading font-bold text-white text-lg">{card.title}</h3>
-                <p className="text-white/70 font-body text-base">{card.text}</p>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary text-sm leading-none mt-[6px]">●</span>
+                  <p className="text-white/70 font-body text-base leading-relaxed">
+                    {card.text}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -88,7 +91,7 @@ const WhyChooseUs = () => {
           {/* Position 2 — top right: first image */}
           <div className="overflow-hidden rounded-sm">
             <img
-              src="/images/why-choose-1.jpg"
+              src="/images/why-choose-1.webp"
               alt="F MAX RD en obra"
               className="w-full h-full object-cover hover:scale-105 transition duration-500"
             />
@@ -97,7 +100,7 @@ const WhyChooseUs = () => {
           {/* Position 3 — bottom left: second image */}
           <div className="overflow-hidden rounded-sm">
             <img
-              src="/images/why-choose-2.jpg"
+              src="/images/why-choose-2.webp"
               alt="F MAX RD empalme"
               className="w-full h-full object-cover hover:scale-105 transition duration-500"
             />
