@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="bg-[#1C2024]">
             <div className="p-[50px_40px_40px_40px]">
               <img
-                src="/images/logo-wb.webp"
+                src="/images/logo-white.png"
                 alt="F MAX RD"
                 className="h-[52px] w-auto object-contain"
               />
