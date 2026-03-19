@@ -80,21 +80,19 @@ const Stats = () => {
               columnas, muros, puentes, cimentaciones, hormigón celular o alquiler de planta eléctrica.
             </p>
 
-            <a
-              href={ctaCooldown ? undefined : "https://wa.me/18294707193?text=Hola%20F%20MAX%20RD%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n."}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               onClick={() => {
                 if (!ctaCooldown) {
+                  window.open("https://wa.me/18294707193?text=Hola%20F%20MAX%20RD%2C%20me%20interesa%20solicitar%20una%20cotizaci%C3%B3n.", '_blank');
                   setCtaCooldown(true);
                   setTimeout(() => setCtaCooldown(false), 30000);
                 }
               }}
-              className={`btn-primary mt-2 inline-flex items-center gap-[13px] ${ctaCooldown ? 'opacity-70 cursor-not-allowed pointer-events-none' : ''}`}
+              className={`btn-primary mt-2 inline-flex items-center gap-[13px] ${ctaCooldown ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
               <FaWhatsapp className="text-green-500 text-xl" />
               {ctaCooldown ? 'Enviado ✓' : 'Solicitar Cotización'}
-            </a>
+            </button>
           </div>
         </div>
       </div>
